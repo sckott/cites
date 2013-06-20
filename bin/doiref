@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'doiref'
+puts DOIref.lookup_bib(ARGV[0])
