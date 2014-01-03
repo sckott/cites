@@ -1,6 +1,8 @@
 doiref
 ======
 
+Video [here](http://asciinema.org/a/7040)
+
 Get bibtex, other format citations from a DOI.
 
 Uses the CrossRef [citation formatting service](http://labs.crossref.org/citation-formatting-service/) to search for the citation information.
