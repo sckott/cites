@@ -1,11 +1,11 @@
 doiref
 ======
 
+**this is alpha software, so expect changes**
+
 ### What it is?  
 
-Get bibtex, other format citations from a DOI.
-
-### doiref does two things: 
+__doiref does two things:__ 
 
 * Search for a paper. Uses the CrossRef Metadata Search API, which allows POST requests of free form text. 
 * Get a citation from a DOI. Uses CrossRef [citation formatting service](http://labs.crossref.org/citation-formatting-service/) to search for citation information.
@@ -14,12 +14,36 @@ Each of the two above tasks are functions that you can use within Ruby, and are 
 
 ### Dependencies
 
-* Uses HTTParty gem to make web calls to Crossref APIs
-* Uses bibtex-ruby gem to parse the bibtex
+* `HTTParty` gem to make web calls to Crossref APIs
+* `bibtex-ruby` gem to parse the bibtex
+* `json` gem to convert to/from JSON
 
 ### Quickstart
 
-You can run it from the CLI or within Ruby. 
+You can run `doiref` from the command line interface (CLI) or within Ruby. 
+
+#### Search for a paper 
+
+From the CLI
+
+```
+crsearch 'Piwowar sharing data increases citation PLOS'
+```
+
+```
+result...
+```
+
+Within Ruby
+
+```ruby
+require 'doiref'
+CRsearch.cr_search('Piwowar sharing data increases citation PLOS')
+```
+
+```ruby
+result...
+```
 
 #### Get a reference from a DOI
 
@@ -27,7 +51,9 @@ From the CLI
 
 ```
 doiref 10.1186/1471-2105-14-16
+```
 
+```
 @article{Piwowar_Day_Fridsma_2007,
   title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},
   volume = {2},
@@ -46,9 +72,11 @@ doiref 10.1186/1471-2105-14-16
 
 Within Ruby
 ```ruby
-require 'DOIref'
+require 'doiref'
 DOIref.lookup_bib('10.1371/journal.pone.0000308')
+```
 
+```ruby
 @article{Piwowar_Day_Fridsma_2007,
   title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},
   volume = {2},
@@ -63,20 +91,6 @@ DOIref.lookup_bib('10.1371/journal.pone.0000308')
   month = {mar},
   pages = {e308}
 }
-```
-
-#### Search for a paper 
-
-From the CLI
-
-```bash
-stuff
-```
-
-Within Ruby
-
-```ruby
-stuff
 ```
 
 ### Video
