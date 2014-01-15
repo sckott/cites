@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>searcher_js_html.html - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../../index.html">Home</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../../README_md.html">README</a>
+  
+    <li class="file"><a href="../../../../doc/DOIref_html.html">DOIref.html</a>
+  
+    <li class="file"><a href="../../../../doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="../../../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../../../doc/doc/DOIref_html_html.html">DOIref_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/README_md_html_html.html">README_md_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/DOIref_html_html_html.html">DOIref_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/doiref_gemspec_html_html_html.html">doiref_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/doiref_gemspec_html_html.html">doiref_gemspec_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/index_html_html.html">index_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/search_js_html.html">search_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li class="file"><a href="../../../../doc/doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li class="file"><a href="../../../../doc/doiref_gemspec_html.html">doiref_gemspec.html</a>
+  
+    <li class="file"><a href="../../../../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../../../../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../../../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../../../../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="../../../../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../../../../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="../../../../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="../../../../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../../../../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li class="file"><a href="../../../../doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../DOIref.html">DOIref</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>&lt;!DOCTYPE html&gt;</p>
+
+<p>&lt;html&gt; &lt;head&gt; &lt;meta content=“text/html; charset=UTF-8”
+http-equiv=“Content-Type”&gt;</p>
+
+<p>&lt;title&gt;searcher_js.html - RDoc Documentation&lt;/title&gt;</p>
+
+<p>&lt;link type=“text/css” media=“screen” href=“../../../rdoc.css”
+rel=“stylesheet”&gt;</p>
+
+<p>&lt;script type=“text/javascript”&gt;</p>
+
+<pre>var rdoc_rel_prefix = &quot;../../../&quot;;</pre>
+
+<p>&lt;/script&gt;</p>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”
+src=“../../../js/jquery.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../../js/navigation.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../../js/search_index.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../../js/search.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../../js/searcher.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../../js/darkfish.js”&gt;&lt;/script&gt;</p>
+
+<p>&lt;body class=“file”&gt; &lt;nav id=“metadata”&gt;</p>
+
+<pre>&lt;nav id=&quot;home-section&quot; class=&quot;section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;
+  &lt;a href=&quot;../../../index.html&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;../../../table_of_contents.html#classes&quot;&gt;Classes&lt;/a&gt;
+  &lt;a href=&quot;../../../table_of_contents.html#methods&quot;&gt;Methods&lt;/a&gt;
+&lt;/h3&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;nav id=&quot;search-section&quot; class=&quot;section project-section&quot; class=&quot;initially-hidden&quot;&gt;
+&lt;form action=&quot;#&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
+  &lt;h3 class=&quot;section-header&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Search&quot; id=&quot;search-field&quot;
+           title=&quot;Type to search, Up and Down to navigate, Enter to load&quot;&gt;
+  &lt;/h3&gt;
+&lt;/form&gt;
+
+&lt;ul id=&quot;search-results&quot; class=&quot;initially-hidden&quot;&gt;&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;div id=&quot;project-metadata&quot;&gt;
+  &lt;nav id=&quot;fileindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Pages&lt;/h3&gt;
+
+&lt;ul&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../README_md.html&quot;&gt;README&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/DOIref_html.html&quot;&gt;DOIref.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/README_md_html.html&quot;&gt;README_md.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/created_rid.html&quot;&gt;created.rid&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/DOIref_html_html.html&quot;&gt;DOIref_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/README_md_html_html.html&quot;&gt;README_md_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/created_rid_html.html&quot;&gt;created_rid.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/doc/created_rid_html_html.html&quot;&gt;created_rid_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/doiref_gemspec_html_html.html&quot;&gt;doiref_gemspec_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/index_html_html.html&quot;&gt;index_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/darkfish_js_html.html&quot;&gt;darkfish_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/jquery_js_html.html&quot;&gt;jquery_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/navigation_js_html.html&quot;&gt;navigation_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/search_index_js_html.html&quot;&gt;search_index_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/search_js_html.html&quot;&gt;search_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/js/searcher_js_html.html&quot;&gt;searcher_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/rdoc_css_html.html&quot;&gt;rdoc_css.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doc/table_of_contents_html_html.html&quot;&gt;table_of_contents_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/doiref_gemspec_html.html&quot;&gt;doiref_gemspec.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/index_html.html&quot;&gt;index.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/darkfish_js.html&quot;&gt;darkfish.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/jquery_js.html&quot;&gt;jquery.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/navigation_js.html&quot;&gt;navigation.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/search_js.html&quot;&gt;search.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/search_index_js.html&quot;&gt;search_index.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/js/searcher_js.html&quot;&gt;searcher.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/rdoc_css.html&quot;&gt;rdoc.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doc/table_of_contents_html.html&quot;&gt;table_of_contents.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../../doiref_gemspec.html&quot;&gt;doiref.gemspec&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>  &lt;nav id=&quot;classindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Class and Module Index&lt;/h3&gt;
+
+&lt;ul class=&quot;link-list&quot;&gt;
+
+  &lt;li&gt;&lt;a href=&quot;../../../DOIref.html&quot;&gt;DOIref&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<p>&lt;div id=“documentation” class=“description”&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta
+content=“text/html; charset=UTF-8”
+http-equiv=“Content-Type”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;title&amp;gt;searcher.js - RDoc
+Documentation&amp;lt;/title&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;link type=“text/css” media=“screen” href=“../../rdoc.css”
+rel=“stylesheet”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;script type=“text/javascript”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var rdoc_rel_prefix = &amp;quot;../../&amp;quot;;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/script&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;script type=“text/javascript” charset=“utf-8”
+src=“../../js/jquery.js”&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/navigation.js”&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/search_index.js”&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=“text/javascript” charset=“utf-8”
+src=“../../js/search.js”&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/searcher.js”&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/darkfish.js”&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;body class=“file”&amp;gt; &amp;lt;nav
+id=“metadata”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;&amp;lt;nav id=&amp;quot;home-section&amp;quot;
+class=&amp;quot;section&amp;quot;&amp;gt; &amp;lt;h3
+class=&amp;quot;section-header&amp;quot;&amp;gt;</p>
+
+<pre>&amp;lt;a href=&amp;quot;../../index.html&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;quot;../../table_of_contents.html#classes&amp;quot;&amp;gt;Classes&amp;lt;/a&amp;gt;
+&amp;lt;a href=&amp;quot;../../table_of_contents.html#methods&amp;quot;&amp;gt;Methods&amp;lt;/a&amp;gt;</pre>
+
+<p>&amp;lt;/h3&amp;gt;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;&amp;lt;nav id=&amp;quot;search-section&amp;quot;
+class=&amp;quot;section project-section&amp;quot;
+class=&amp;quot;initially-hidden&amp;quot;&amp;gt; &amp;lt;form
+action=&amp;quot;#&amp;quot; method=&amp;quot;get&amp;quot;
+accept-charset=&amp;quot;utf-8&amp;quot;&amp;gt;</p>
+
+<pre>&amp;lt;h3 class=&amp;quot;section-header&amp;quot;&amp;gt;
+  &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;search&amp;quot; placeholder=&amp;quot;Search&amp;quot; id=&amp;quot;search-field&amp;quot;
+         title=&amp;quot;Type to search, Up and Down to navigate, Enter to load&amp;quot;&amp;gt;
+&amp;lt;/h3&amp;gt;</pre>
+
+<p>&amp;lt;/form&amp;gt;</p>
+
+<p>&amp;lt;ul id=&amp;quot;search-results&amp;quot;
+class=&amp;quot;initially-hidden&amp;quot;&amp;gt;&amp;lt;/ul&amp;gt;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;&amp;lt;div id=&amp;quot;project-metadata&amp;quot;&amp;gt;</p>
+
+<pre>&amp;lt;nav id=&amp;quot;fileindex-section&amp;quot; class=&amp;quot;section project-section&amp;quot;&amp;gt;</pre>
+
+<p>&amp;lt;h3
+class=&amp;quot;section-header&amp;quot;&amp;gt;Pages&amp;lt;/h3&amp;gt;</p>
+
+<p>&amp;lt;ul&amp;gt;</p>
+
+<pre>&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../README_md.html&amp;quot;&amp;gt;README&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/DOIref_html.html&amp;quot;&amp;gt;DOIref.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/README_md_html.html&amp;quot;&amp;gt;README_md.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/created_rid.html&amp;quot;&amp;gt;created.rid&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/doc/created_rid_html.html&amp;quot;&amp;gt;created_rid.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/doiref_gemspec_html.html&amp;quot;&amp;gt;doiref_gemspec.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/index_html.html&amp;quot;&amp;gt;index.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/darkfish_js.html&amp;quot;&amp;gt;darkfish.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/jquery_js.html&amp;quot;&amp;gt;jquery.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/navigation_js.html&amp;quot;&amp;gt;navigation.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/search_js.html&amp;quot;&amp;gt;search.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/search_index_js.html&amp;quot;&amp;gt;search_index.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/js/searcher_js.html&amp;quot;&amp;gt;searcher.js&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/rdoc_css.html&amp;quot;&amp;gt;rdoc.css&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doc/table_of_contents_html.html&amp;quot;&amp;gt;table_of_contents.html&amp;lt;/a&amp;gt;
+
+&amp;lt;li class=&amp;quot;file&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;../../doiref_gemspec.html&amp;quot;&amp;gt;doiref.gemspec&amp;lt;/a&amp;gt;</pre>
+
+<p>&amp;lt;/ul&amp;gt;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;  &amp;lt;nav id=&amp;quot;classindex-section&amp;quot;
+class=&amp;quot;section project-section&amp;quot;&amp;gt; &amp;lt;h3
+class=&amp;quot;section-header&amp;quot;&amp;gt;Class and Module
+Index&amp;lt;/h3&amp;gt;</p>
+
+<p>&amp;lt;ul class=&amp;quot;link-list&amp;quot;&amp;gt;</p>
+
+<pre>&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;../../DOIref.html&amp;quot;&amp;gt;DOIref&amp;lt;/a&amp;gt;</pre>
+
+<p>&amp;lt;/ul&amp;gt;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;&amp;lt;/div&amp;gt;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/nav&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;div id=“documentation”
+class=“description”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;p&amp;gt;Searcher = function(data)
+{&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;pre&amp;gt;this.data = data; this.handlers =
+[];&amp;lt;/pre&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;p&amp;gt;}&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;p&amp;gt;Searcher.prototype = new function()
+{&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;pre&amp;gt;// search is performed in chunks of 1000 for
+non-blocking user input var CHUNK_SIZE = 1000; // do not try to find more
+than 100 results var MAX_RESULTS = 100; var huid = 1; var suid = 1; var
+runs = 0;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;this.find = function(query) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var queries = splitQuery(query); var regexps =
+buildRegexps(queries); var highlighters = buildHilighters(queries); var
+state = { from: 0, pass: 0, limit: MAX_RESULTS, n: suid++}; var _this =
+this;</p>
+
+<p>this.currentSuid = state.n;</p>
+
+<p>if (!query) return;</p>
+
+<p>var run = function() {</p>
+
+<pre>// stop current search thread if new search started
+if (state.n != _this.currentSuid) return;
+
+var results =
+  performSearch(_this.data, regexps, queries, highlighters, state);
+var hasMore = (state.limit &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; state.pass &amp;amp;lt; 4);
+
+triggerResults.call(_this, results, !hasMore);
+if (hasMore) {
+  setTimeout(run, 2);
+}
+runs++;</pre>
+
+<p>}; runs = 0;</p>
+
+<p>// start search thread run();&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;—– Events ——&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;this.ready = function(fn) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;fn.huid = huid; this.handlers.push(fn);&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;—– Utilities ——&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;function splitQuery(query) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;return jQuery.grep(query.split(/(s+|::?|()?)/), function(string)
+{</p>
+
+<pre>return string.match(/\S/)</pre>
+
+<p>});&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function buildRegexps(queries) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;return jQuery.map(queries, function(query) {</p>
+
+<pre>return new RegExp(query.replace(/(.)/g, &amp;amp;#39;([$1])([^$1]*?)&amp;amp;#39;), &amp;amp;#39;i&amp;amp;#39;)</pre>
+
+<p>});&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function buildHilighters(queries) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;return jQuery.map(queries, function(query) {</p>
+
+<pre>return jQuery.map(query.split(&amp;amp;#39;&amp;amp;#39;), function(l, i) {
+  return &amp;amp;#39;\u0001$&amp;amp;#39; + (i*2+1) + &amp;amp;#39;\u0002$&amp;amp;#39; + (i*2+2);
+}).join(&amp;amp;#39;&amp;amp;#39;);</pre>
+
+<p>});&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;// function longMatchRegexp(index, longIndex, regexps) { //    
+for (var i</p>
+
+<h1 id="label-regexps.length+-+1%3B+i+%26amp%3Bgt%3B%3D+0%3B+i%E2%80%93%29%7B+%2F%2F+++++++++if+%28%21%3Ca">regexps.length - 1; i &amp;amp;gt;= 0; i–){ //         if (!&lt;a<span><a href="#label-regexps.length+-+1%3B+i+%26amp%3Bgt%3B%3D+0%3B+i%E2%80%93%29%7B+%2F%2F+++++++++if+%28%21%3Ca">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>href=“<a
+href="http://i">index.match(regexps</a">i”>index.match(regexps</a</a>&gt;)
+&amp;amp;amp;&amp;amp;amp; !&lt;a href=“<a
+href="http://i">longIndex.match(regexps</a">i”>longIndex.match(regexps</a</a>&gt;))
+return false; //     }; //</p>
+
+<p>return true; // }&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;  —– Mathchers ——</p>
+
+<pre>This record matches if the index starts with queries[0] and the record
+matches all of the regexps</pre>
+
+<p>/&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;function matchPassBeginning(index, longIndex, queries, regexps)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;if (<a href="http://0">index.indexOf(queries</a>) != 0) return
+false; for (var i=1, l = regexps.length; i &amp;amp;lt; l; i++) {</p>
+
+<pre>if (!index.match(regexps[i]) &amp;amp;amp;&amp;amp;amp; !longIndex.match(regexps[i]))
+  return false;</pre>
+
+<p>}; return true;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;  &lt;/p&gt;</p>
+
+<p>&lt;pre&gt; This record matches if the longIndex starts with <a
+href="http://0">queries</a> and the</p>
+
+<pre>longIndex matches all of the regexps</pre>
+
+<p>/&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;function matchPassLongIndex(index, longIndex, queries, regexps)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;if (<a href="http://0">longIndex.indexOf(queries</a>) != 0)
+return false; for (var i=1, l = regexps.length; i &amp;amp;lt; l; i++) {</p>
+
+<pre>if (!longIndex.match(regexps[i]))
+  return false;</pre>
+
+<p>}; return true;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;/*&lt;/p&gt;</p>
+
+<p>&lt;pre&gt; This record matches if the index contains <a
+href="http://0">queries</a> and the record</p>
+
+<pre>matches all of the regexps</pre>
+
+<p>/&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;function matchPassContains(index, longIndex, queries, regexps)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;if (<a href="http://0">index.indexOf(queries</a>) == -1) return
+false; for (var i=1, l = regexps.length; i &amp;amp;lt; l; i++) {</p>
+
+<pre>if (!index.match(regexps[i]) &amp;amp;amp;&amp;amp;amp; !longIndex.match(regexps[i]))
+  return false;</pre>
+
+<p>}; return true;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;/*&lt;/p&gt;</p>
+
+<p>&lt;pre&gt; This record matches if <a href="http://0">regexps</a> matches
+the index and the record</p>
+
+<pre>matches all of the regexps</pre>
+
+<p>/&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;function matchPassRegexp(index, longIndex, queries, regexps)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;if (!<a href="http://0">index.match(regexps</a>)) return false;
+for (var i=1, l = regexps.length; i &amp;amp;lt; l; i++) {</p>
+
+<pre>if (!index.match(regexps[i]) &amp;amp;amp;&amp;amp;amp; !longIndex.match(regexps[i]))
+  return false;</pre>
+
+<p>}; return true;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;/*  —– Highlighters ——&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function highlightRegexp(info, queries, regexps, highlighters)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var result = createResult(info); for (var i=0, l =
+regexps.length; i &amp;amp;lt; l; i++) {</p>
+
+<pre>result.title = result.title.replace(regexps[i], highlighters[i]);
+result.namespace = result.namespace.replace(regexps[i], highlighters[i]);</pre>
+
+<p>}; return result;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function hltSubstring(string, pos, length) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;return string.substring(0, pos) +
+&amp;amp;#39;u0001&amp;amp;#39; + string.substring(pos, pos + length) +
+&amp;amp;#39;u0002&amp;amp;#39; + string.substring(pos +
+length);&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function highlightQuery(info, queries, regexps, highlighters)
+{&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var result = createResult(info); var pos = 0; var lcTitle =
+result.title.toLowerCase();</p>
+
+<p>pos = <a href="http://0">lcTitle.indexOf(queries</a>); if (pos != -1) {</p>
+
+<pre>result.title = hltSubstring(result.title, pos, queries[0].length);</pre>
+
+<p>}</p>
+
+<p>result.namespace = <a href="http://0">result.namespace.replace(regexps</a>,
+<a href="http://0">highlighters</a>); for (var i=1, l = regexps.length; i
+&amp;amp;lt; l; i++) {</p>
+
+<pre>result.title = result.title.replace(regexps[i], highlighters[i]);
+result.namespace = result.namespace.replace(regexps[i], highlighters[i]);</pre>
+
+<p>}; return result;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function createResult(info) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var result = {}; result.title = <a href="http://0">info</a>;
+result.namespace = <a href="http://1">info</a>; result.path = <a
+href="http://2">info</a>; result.params = <a href="http://3">info</a>;
+result.snippet = <a href="http://4">info</a>; return result;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;/*  —– Searching ——     function performSearch(data, regexps,
+queries, highlighters, state) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;var searchIndex = data.searchIndex; var longSearchIndex =
+data.longSearchIndex; var info = data.info; var result = []; var i =
+state.from; var l = searchIndex.length; var togo = CHUNK_SIZE; var
+matchFunc, hltFunc;</p>
+
+<p>while (state.pass &amp;amp;lt; 4 &amp;amp;amp;&amp;amp;amp; state.limit
+&amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; togo &amp;amp;gt; 0) {</p>
+
+<pre>if (state.pass == 0) {
+  matchFunc = matchPassBeginning;
+  hltFunc = highlightQuery;
+} else if (state.pass == 1) {
+  matchFunc = matchPassLongIndex;
+  hltFunc = highlightQuery;
+} else if (state.pass == 2) {
+  matchFunc = matchPassContains;
+  hltFunc = highlightQuery;
+} else if (state.pass == 3) {
+  matchFunc = matchPassRegexp;
+  hltFunc = highlightRegexp;
+}
+
+for (; togo &amp;amp;gt; 0 &amp;amp;amp;&amp;amp;amp; i &amp;amp;lt; l &amp;amp;amp;&amp;amp;amp; state.limit &amp;amp;gt; 0; i++, togo--) {
+  if (info[i].n == state.n) continue;
+  if (matchFunc(searchIndex[i], longSearchIndex[i], queries, regexps)) {
+    info[i].n = state.n;
+    result.push(hltFunc(info[i], queries, regexps, highlighters));
+    state.limit--;
+  }
+};
+if (searchIndex.length &amp;amp;lt;= i) {
+  state.pass++;
+  i = state.from = 0;
+} else {
+  state.from = i;
+}</pre>
+
+<p>} return result;&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&lt;/p&gt;</p>
+
+<p>&lt;p&gt;function triggerResults(results, isLast) {&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;jQuery.each(this.handlers, function(i, fn) {</p>
+
+<pre>fn.call(this, results, isLast)</pre>
+
+<p>})&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;}&amp;lt;/pre&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;p&amp;gt;}&amp;lt;/p&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;footer id=“validator-badges”&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;pre&gt;&amp;lt;p&amp;gt;&amp;lt;a <a
+href="http://Validate">href=“http://validator.w3.org/check/referer”&gt;</a>;
+&amp;lt;p&amp;gt;Generated by &amp;lt;a href=&amp;quot;<a
+href="https://github.com/rdoc/rdoc&quot;&gt;RDoc&lt;/a&gt">github.com/rdoc/rdoc“&gt;RDoc&lt;/a&gt</a>;
+4.0.0. &amp;lt;p&amp;gt;Generated with the &amp;lt;a href=&amp;quot;<a
+href="http://deveiate.org/projects/Darkfish-Rdoc/&quot;&gt;Darkfish">deveiate.org/projects/Darkfish-Rdoc/”&gt;Darkfish</a>
+Rdoc Generator&amp;lt;/a&amp;gt; 3.&lt;/pre&gt;</p>
+
+<p>&lt;p&gt;&amp;lt;/footer&amp;gt;&lt;/p&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<p>&lt;footer id=“validator-badges”&gt;</p>
+
+<pre>&lt;p&gt;&lt;a href=&quot;http://validator.w3.org/check/referer&quot;&gt;[Validate]&lt;/a&gt;
+&lt;p&gt;Generated by &lt;a href=&quot;https://github.com/rdoc/rdoc&quot;&gt;RDoc&lt;/a&gt; 4.0.0.
+&lt;p&gt;Generated with the &lt;a href=&quot;http://deveiate.org/projects/Darkfish-Rdoc/&quot;&gt;Darkfish Rdoc Generator&lt;/a&gt; 3.</pre>
+
+<p>&lt;/footer&gt;</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

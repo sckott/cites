@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'doiref'
+puts DOIref.shit(ARGV[0])

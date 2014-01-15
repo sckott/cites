@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-doiref">doiref</a>
+      <li><a href="#label-What+it+is%3F">What it is?</a>
+      <li><a href="#label-Dependencies">Dependencies</a>
+      <li><a href="#label-Quickstart">Quickstart</a>
+      <li><a href="#label-Install">Install</a>
+      <li><a href="#label-Search+for+a+paper">Search for a paper</a>
+      <li><a href="#label-Get+a+reference+from+a+DOI">Get a reference from a DOI</a>
+      <li><a href="#label-Video">Video</a>
+      <li><a href="#label-To+do">To do</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/DOIref_html.html">DOIref.html</a>
+  
+    <li class="file"><a href="./doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./doc/doc/DOIref_html_html.html">DOIref_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/README_md_html_html.html">README_md_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/DOIref_html_html_html.html">DOIref_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/doiref_gemspec_html_html_html.html">doiref_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doiref_gemspec_html_html.html">doiref_gemspec_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/index_html_html.html">index_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/search_js_html.html">search_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li class="file"><a href="./doc/doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li class="file"><a href="./doc/doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li class="file"><a href="./doc/doiref_gemspec_html.html">doiref_gemspec.html</a>
+  
+    <li class="file"><a href="./doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="./doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="./doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="./doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="./doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="./doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="./doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="./doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="./doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li class="file"><a href="./doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./DOIref.html">DOIref</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-doiref">doiref<span><a href="#label-doiref">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><strong>this is alpha software, so expect changes</strong></p>
+
+<h3 id="label-What+it+is%3F">What it is?<span><a href="#label-What+it+is%3F">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><strong>doiref does two things:</strong></p>
+<ul><li>
+<p>Search for a paper. Uses the CrossRef Metadata Search API, which allows
+POST requests of free form text.</p>
+</li><li>
+<p>Get a citation from a DOI. Uses CrossRef <a
+href="http://labs.crossref.org/citation-formatting-service/">citation
+formatting service</a> to search for citation information.</p>
+</li></ul>
+
+<p>Each of the two above tasks are functions that you can use within Ruby, and
+are available from the command line/terminal so that you don&#39;t have to
+spin up Ruby. This latter use case I think is really powerful. That is,
+during a typical writing workflow (in which you are using bibtex formatted
+references) one can want a citation for their paper, and instead of opening
+up a browser and using Google Scholar or Web of Science, etc., you can
+quickly search in your terminal by doing e.g., <code>crsearch &#39;keywords
+that will help find the paper, including author, year, etc.&#39;</code>.
+Which if matches will give you a DOI. Then you can do <code>doiref
+DOI/string | pbcopy</code> and you get the bibtex reference in your
+clipboard. Then just paste into your bibtex file or references manager.</p>
+
+<h3 id="label-Dependencies">Dependencies<span><a href="#label-Dependencies">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p><code>HTTParty</code> gem to make web calls to Crossref APIs</p>
+</li><li>
+<p><code>bibtex-ruby</code> gem to parse the bibtex</p>
+</li><li>
+<p><code>json</code> gem to convert to/from JSON</p>
+</li></ul>
+
+<h3 id="label-Quickstart">Quickstart<span><a href="#label-Quickstart">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<h4 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<pre>git clone git@github.com:sckott/doiref.git
+cd doiref
+gem build doiref.gemspec &amp;&amp; gem install doiref-0.0.1.gem</pre>
+
+<p>You can run <code>doiref</code> from the command line interface (CLI) or
+within Ruby.</p>
+
+<h4 id="label-Search+for+a+paper">Search for a paper<span><a href="#label-Search+for+a+paper">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<p>From the CLI</p>
+
+<pre>crsearch &#39;Piwowar sharing data increases citation PLOS&#39;</pre>
+
+<pre class="ruby">[{<span class="ruby-string">&quot;match&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;10.1371/journal.pone.0000308&quot;</span>, <span class="ruby-string">&quot;text&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Piwowar sharing data increases citation PLOS&quot;</span>}]
+</pre>
+
+<p>Within Ruby</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;doiref&#39;</span>
+<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
+</pre>
+
+<pre class="ruby">[{<span class="ruby-string">&quot;match&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;10.1371/journal.pone.0000308&quot;</span>, <span class="ruby-string">&quot;text&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Piwowar sharing data increases citation PLOS&quot;</span>}]=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+</pre>
+
+<h4 id="label-Get+a+reference+from+a+DOI">Get a reference from a DOI<span><a href="#label-Get+a+reference+from+a+DOI">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+
+<p>From the CLI</p>
+
+<pre>doiref 10.1186/1471-2105-14-16</pre>
+
+<pre>@article{Piwowar_Day_Fridsma_2007,
+  title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},
+  volume = {2},
+  url = {http://dx.doi.org/10.1371/journal.pone.0000308},
+  doi = {10.1371/journal.pone.0000308},
+  number = {3},
+  journal = {PLoS ONE},
+  publisher = {Public Library of Science},
+  author = {Piwowar, Heather A. and Day, Roger S. and Fridsma, Douglas B.},
+  editor = {Ioannidis, JohnEditor},
+  year = {2007},
+  month = {mar},
+  pages = {e308}
+}</pre>
+
+<p>Within Ruby
+&lt;code&gt;ruby
+require &#39;doiref&#39;
+<a
+href="DOIref.html#method-c-doi2cit">DOIref.doi2cit</a>(&#39;10.1371/journal.pone.0000308&#39;)
+&lt;/code&gt;</p>
+
+<pre class="ruby"><span class="ruby-ivar">@article</span>{<span class="ruby-constant">Piwowar_Day_Fridsma_2007</span>,
+  <span class="ruby-identifier">title</span> = {<span class="ruby-constant">Sharing</span> <span class="ruby-constant">Detailed</span> <span class="ruby-constant">Research</span> <span class="ruby-constant">Data</span> <span class="ruby-constant">Is</span> <span class="ruby-constant">Associated</span> <span class="ruby-identifier">with</span> <span class="ruby-constant">Increased</span> <span class="ruby-constant">Citation</span> <span class="ruby-constant">Rate</span>},
+  <span class="ruby-identifier">volume</span> = {<span class="ruby-value">2</span>},
+  <span class="ruby-identifier">url</span> = {<span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">/dx.doi.org/</span><span class="ruby-value">10.1371</span><span class="ruby-operator">/</span><span class="ruby-identifier">journal</span>.<span class="ruby-identifier">pone</span><span class="ruby-value">.0000308</span>},
+  <span class="ruby-identifier">doi</span> = {<span class="ruby-value">10.1371</span><span class="ruby-operator">/</span><span class="ruby-identifier">journal</span>.<span class="ruby-identifier">pone</span><span class="ruby-value">.0000308</span>},
+  <span class="ruby-identifier">number</span> = {<span class="ruby-value">3</span>},
+  <span class="ruby-identifier">journal</span> = {<span class="ruby-constant">PLoS</span> <span class="ruby-constant">ONE</span>},
+  <span class="ruby-identifier">publisher</span> = {<span class="ruby-constant">Public</span> <span class="ruby-constant">Library</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">Science</span>},
+  <span class="ruby-identifier">author</span> = {<span class="ruby-constant">Piwowar</span>, <span class="ruby-constant">Heather</span> <span class="ruby-constant">A</span>. <span class="ruby-identifier">and</span> <span class="ruby-constant">Day</span>, <span class="ruby-constant">Roger</span> <span class="ruby-constant">S</span>. <span class="ruby-identifier">and</span> <span class="ruby-constant">Fridsma</span>, <span class="ruby-constant">Douglas</span> <span class="ruby-constant">B</span>.},
+  <span class="ruby-identifier">editor</span> = {<span class="ruby-constant">Ioannidis</span>, <span class="ruby-constant">JohnEditor</span>},
+  <span class="ruby-identifier">year</span> = {<span class="ruby-value">2007</span>},
+  <span class="ruby-identifier">month</span> = {<span class="ruby-identifier">mar</span>},
+  <span class="ruby-identifier">pages</span> = {<span class="ruby-identifier">e308</span>}
+}
+</pre>
+
+<h3 id="label-Video">Video<span><a href="#label-Video">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p><strong>Asciicast video <a
+href="http://asciinema.org/a/7040">here</a></strong></p>
+
+<h3 id="label-To+do">To do<span><a href="#label-To+do">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<ul><li>
+<p>Add parameter for citation format, right now only gives back bibtex.
+Crossref API will give back many different formats though.</p>
+</li><li>
+<p>Add other Crossref metadata search functions.</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

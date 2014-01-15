@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>search_index_js.html - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-function%28data%2C+input%2C+result%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.%24input">function(data, input, result) {nn&amp;lt;pre&amp;gt;this.data = data;nthis.$input</a>
+      <li><a href="#label-%24%28input%29%3Bnthis.%24result+%3D+%24%28result%29%3B">$(input);nthis.$result = $(result);</a>
+      <li><a href="#label-function%28data%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.handlers+%3D">function(data) {nn&amp;lt;pre&amp;gt;this.data = data;nthis.handlers =</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../README_md.html">README</a>
+  
+    <li class="file"><a href="../../../doc/DOIref_html.html">DOIref.html</a>
+  
+    <li class="file"><a href="../../../doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="../../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../../doc/doc/DOIref_html_html.html">DOIref_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/README_md_html_html.html">README_md_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/DOIref_html_html_html.html">DOIref_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/doiref_gemspec_html_html_html.html">doiref_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/doiref_gemspec_html_html.html">doiref_gemspec_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/index_html_html.html">index_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/search_js_html.html">search_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li class="file"><a href="../../../doc/doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li class="file"><a href="../../../doc/doiref_gemspec_html.html">doiref_gemspec.html</a>
+  
+    <li class="file"><a href="../../../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../../../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../../../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="../../../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../../../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="../../../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="../../../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../../../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li class="file"><a href="../../../doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../DOIref.html">DOIref</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>&lt;!DOCTYPE html&gt;</p>
+
+<p>&lt;html&gt; &lt;head&gt; &lt;meta content=“text/html; charset=UTF-8”
+http-equiv=“Content-Type”&gt;</p>
+
+<p>&lt;title&gt;search_index.js - RDoc Documentation&lt;/title&gt;</p>
+
+<p>&lt;link type=“text/css” media=“screen” href=“../../rdoc.css”
+rel=“stylesheet”&gt;</p>
+
+<p>&lt;script type=“text/javascript”&gt;</p>
+
+<pre>var rdoc_rel_prefix = &quot;../../&quot;;</pre>
+
+<p>&lt;/script&gt;</p>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”
+src=“../../js/jquery.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/navigation.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/search_index.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/search.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/searcher.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“../../js/darkfish.js”&gt;&lt;/script&gt;</p>
+
+<p>&lt;body class=“file”&gt; &lt;nav id=“metadata”&gt;</p>
+
+<pre>&lt;nav id=&quot;home-section&quot; class=&quot;section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;
+  &lt;a href=&quot;../../index.html&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;../../table_of_contents.html#classes&quot;&gt;Classes&lt;/a&gt;
+  &lt;a href=&quot;../../table_of_contents.html#methods&quot;&gt;Methods&lt;/a&gt;
+&lt;/h3&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;nav id=&quot;search-section&quot; class=&quot;section project-section&quot; class=&quot;initially-hidden&quot;&gt;
+&lt;form action=&quot;#&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
+  &lt;h3 class=&quot;section-header&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Search&quot; id=&quot;search-field&quot;
+           title=&quot;Type to search, Up and Down to navigate, Enter to load&quot;&gt;
+  &lt;/h3&gt;
+&lt;/form&gt;
+
+&lt;ul id=&quot;search-results&quot; class=&quot;initially-hidden&quot;&gt;&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;div id=&quot;project-metadata&quot;&gt;
+  &lt;nav id=&quot;fileindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Pages&lt;/h3&gt;
+
+&lt;ul&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../README_md.html&quot;&gt;README&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/DOIref_html.html&quot;&gt;DOIref.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/README_md_html.html&quot;&gt;README_md.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/created_rid.html&quot;&gt;created.rid&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/DOIref_html_html.html&quot;&gt;DOIref_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/README_md_html_html.html&quot;&gt;README_md_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/created_rid_html.html&quot;&gt;created_rid.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/doc/created_rid_html_html.html&quot;&gt;created_rid_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/doiref_gemspec_html_html.html&quot;&gt;doiref_gemspec_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/index_html_html.html&quot;&gt;index_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/darkfish_js_html.html&quot;&gt;darkfish_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/jquery_js_html.html&quot;&gt;jquery_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/navigation_js_html.html&quot;&gt;navigation_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/search_index_js_html.html&quot;&gt;search_index_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/search_js_html.html&quot;&gt;search_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/js/searcher_js_html.html&quot;&gt;searcher_js.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/rdoc_css_html.html&quot;&gt;rdoc_css.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doc/table_of_contents_html_html.html&quot;&gt;table_of_contents_html.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/doiref_gemspec_html.html&quot;&gt;doiref_gemspec.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/index_html.html&quot;&gt;index.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/darkfish_js.html&quot;&gt;darkfish.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/jquery_js.html&quot;&gt;jquery.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/navigation_js.html&quot;&gt;navigation.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/search_js.html&quot;&gt;search.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/search_index_js.html&quot;&gt;search_index.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/js/searcher_js.html&quot;&gt;searcher.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/rdoc_css.html&quot;&gt;rdoc.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doc/table_of_contents_html.html&quot;&gt;table_of_contents.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;../../doiref_gemspec.html&quot;&gt;doiref.gemspec&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>  &lt;nav id=&quot;classindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Class and Module Index&lt;/h3&gt;
+
+&lt;ul class=&quot;link-list&quot;&gt;
+
+  &lt;li&gt;&lt;a href=&quot;../../DOIref.html&quot;&gt;DOIref&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<p>&lt;div id=“documentation” class=“description”&gt;</p>
+
+<p>&lt;p&gt;var search_data = {“index”:{“&lt;a href=“<a
+href="http://"doiref","doi2cit()","search()","readme","doiref.html","readme_md.html","created.rid","created_rid.html","doiref_gemspec.html","index.html","darkfish.js","jquery.js","navigation.js","search.js","search_index.js","searcher.js","rdoc.css","table_of_contents.html","doiref.gemspec"">searchIndex”:</a>,“<a">”doiref“,”doi2cit()“,”search()“,”readme“,”doiref.html“,”readme_md.html“,”created.rid“,”created_rid.html“,”doiref_gemspec.html“,”index.html“,”darkfish.js“,”jquery.js“,”navigation.js“,”search.js“,”search_index.js“,”searcher.js“,”rdoc.css“,”table_of_contents.html“,”doiref.gemspec“”>searchIndex”:</a>,“<a</a>
+href=“”doiref“,”doiref::doi2cit()“,”doiref::search()“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“,”“”&gt;longSearchIndex”:&lt;/a&gt;,“info”:[[“DOIref”,“”,“DOIref.html”,“”,“&amp;lt;p&amp;gt;DOIref:
+The single class (for now) in
+doirefn”],[“doi2cit”,“DOIref”,“DOIref.html#method-c-doi2cit”,“(doi,
+format=&amp;#39;text&amp;#39;, style=&amp;#39;apa&amp;#39;,
+locale=&amp;#39;en-US&amp;#39;)”,“&amp;lt;p&amp;gt;doi2cit: Get a citation
+in various foarmats from a
+DOIn&amp;lt;p&amp;gt;Args:nn&amp;lt;pre&amp;gt;doi: A DOInformat: one of
+rdf-xml, turtle, …&amp;lt;/&lt;a href=“<a
+href="http://"search","DOIref","DOIref.html#method-c-search","(query)",""">pre>n”],</a>,[“README”,“”,“README_md.html”,“”,“&lt;p&gt;doirefn&lt;p&gt;&lt;strong&gt;this”>“search”,“DOIref”,“DOIref.html#method-c-search”,“(query)”,“”“>pre>n”],</a>,[“README”,“”,“README_md.html”,“”,“&lt;p&gt;doirefn&lt;p&gt;&lt;strong&gt;this</a>
+is alpha software, so expect
+changes&amp;lt;/strong&amp;gt;n&amp;lt;p&amp;gt;What it
+is?n”],[“DOIref.html”,“”,“doc/DOIref_html.html”,“”,“&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n”],[“README_md.html”,“”,“doc/README_md_html.html”,“”,“&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n”],[“created.rid”,“”,“doc/created_rid.html”,“”,“&amp;lt;p&amp;gt;Sat, 11
+Jan 2014 09:38:57 -0800 ./bin/crsearch  Sat, 11 Jan 2014 08:33:18n-0800
+./bin/doiref Sat,
+…n”],[“created_rid.html”,“”,“doc/doc/created_rid_html.html”,“”,“&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n”],[“doiref_gemspec.html”,“”,“doc/doiref_gemspec_html.html”,“”,“&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n”],[“index.html”,“”,“doc/index_html.html”,“”,“&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n”],[“darkfish.js”,“”,“doc/js/darkfish_js.html”,“”,“n&amp;lt;pre&amp;gt;Darkfish
+Page Functionsn$Id: darkfish.js 53 2009-01-07 02:52:03Z deveiant $nnAuthor:
+Michael Granger
+…&amp;lt;/pre&amp;gt;n”],[“jquery.js”,“”,“doc/js/jquery_js.html”,“”,“n&amp;lt;pre&amp;gt;!n
+jQuery JavaScript Library v1.6.2n &lt;a href=”<a
+href="http://jquery.com/\n\n">jquery.com/nn</a">jquery.com/nn“>jquery.com/nn</a</a>&gt;
+Copyright 2011, John Resign Dual licensed under
+…&amp;lt;/pre&amp;gt;n”],[“navigation.js”,“”,“doc/js/navigation_js.html”,“”,“n&amp;lt;pre&amp;gt;Navigation
+allows movement using the arrow keys through the search results.nnWhen
+using this library
+…&amp;lt;/pre&amp;gt;n”],[“search.js”,“”,“doc/js/search_js.html”,“”,“&amp;lt;p&amp;gt;Search</p>
+
+<h1 id="label-function%28data%2C+input%2C+result%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.%24input">function(data, input, result) {nn&amp;lt;pre&amp;gt;this.data = data;nthis.$input<span><a href="#label-function%28data%2C+input%2C+result%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.%24input">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h1 id="label-%24%28input%29%3Bnthis.%24result+%3D+%24%28result%29%3B">$(input);nthis.$result = $(result);<span><a href="#label-%24%28input%29%3Bnthis.%24result+%3D+%24%28result%29%3B">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>…&amp;lt;/pre&amp;gt;n”],[“search_index.js”,“”,“doc/js/search_index_js.html”,“”,“&amp;lt;p&amp;gt;var
+search_data =n{“index”:{“&lt;a href=“<a
+href="http://“DOIref”,“”,“DOIref.html”,“”,“&lt;p&gt;This\n…\n"">searchIndex”:,“longSearchIndex”:,“info”:[</a>,[”searcher.js“,”“,”doc/js/searcher_js.html“,”“,”&lt;p&gt;Searcher”>“DOIref”,“”,“DOIref.html”,“”,“&lt;p&gt;Thisn…n“”>searchIndex”:,“longSearchIndex”:,“info”:[</a>,[”searcher.js“,”“,”doc/js/searcher_js.html“,”“,”&lt;p&gt;Searcher</a></p>
+
+<h1 id="label-function%28data%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.handlers+%3D">function(data) {nn&amp;lt;pre&amp;gt;this.data = data;nthis.handlers =<span><a href="#label-function%28data%29+%7Bnn%26lt%3Bpre%26gt%3Bthis.data+%3D+data%3Bnthis.handlers+%3D">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>[];&amp;lt;/pre&amp;gt;n&amp;lt;p&amp;gt;}n“],[”rdoc.css“,”“,”doc/rdoc_css.html“,”“,”n&amp;lt;pre&amp;gt;&amp;amp;quot;Darkfish&amp;amp;quot;
+Rdoc CSSn$Id: rdoc.css 54 2009-01-27 01:09:48Z deveiant $nnAuthor: Michael
+Granger &amp;amp;lt;ged@FaerieMUD.org&amp;amp;gt;
+…&amp;lt;/pre&amp;gt;n“],[”table_of_contents.html“,”“,”doc/table_of_contents_html.html“,”“,”&amp;lt;p&amp;gt;&amp;amp;lt;!DOCTYPE
+html&amp;amp;gt;n&amp;lt;p&amp;gt;&amp;amp;lt;html&amp;amp;gt;
+&amp;amp;lt;head&amp;amp;gt; &amp;amp;lt;meta content=“text/html;
+charset=UTF-8”
+…n“],[”doiref.gemspec“,”“,”doiref_gemspec.html“,”“,”&amp;lt;p&amp;gt;Gem::Specification.new
+do |s|nn&amp;lt;pre&amp;gt;s.name        =
+&amp;amp;#39;doiref&amp;amp;#39;ns.version     =
+&amp;amp;#39;0.0.1&amp;amp;#39;ns.date        =
+&amp;amp;#39;2014-01-03&amp;amp;#39; …&amp;lt;/pre&amp;gt;n“]]}}&lt;/p&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<p>&lt;footer id=“validator-badges”&gt;</p>
+
+<pre>&lt;p&gt;&lt;a href=&quot;http://validator.w3.org/check/referer&quot;&gt;[Validate]&lt;/a&gt;
+&lt;p&gt;Generated by &lt;a href=&quot;https://github.com/rdoc/rdoc&quot;&gt;RDoc&lt;/a&gt; 4.0.0.
+&lt;p&gt;Generated with the &lt;a href=&quot;http://deveiate.org/projects/Darkfish-Rdoc/&quot;&gt;Darkfish Rdoc Generator&lt;/a&gt; 3.</pre>
+
+<p>&lt;/footer&gt;</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

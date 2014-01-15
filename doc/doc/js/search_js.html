@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>search.js - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_md.html">README</a>
+  
+    <li class="file"><a href="../../doc/DOIref_html.html">DOIref.html</a>
+  
+    <li class="file"><a href="../../doc/README_md_html.html">README_md.html</a>
+  
+    <li class="file"><a href="../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../doc/doc/DOIref_html_html.html">DOIref_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/README_md_html_html.html">README_md_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/DOIref_html_html_html.html">DOIref_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/doiref_gemspec_html_html_html.html">doiref_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/doiref_gemspec_html_html.html">doiref_gemspec_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/index_html_html.html">index_html.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/search_js_html.html">search_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li class="file"><a href="../../doc/doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li class="file"><a href="../../doc/doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li class="file"><a href="../../doc/doiref_gemspec_html.html">doiref_gemspec.html</a>
+  
+    <li class="file"><a href="../../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li class="file"><a href="../../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li class="file"><a href="../../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li class="file"><a href="../../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li class="file"><a href="../../doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../DOIref.html">DOIref</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>Search = function(data, input, result) {</p>
+
+<pre>this.data = data;
+this.$input = $(input);
+this.$result = $(result);
+
+this.$current = null;
+this.$view = this.$result.parent();
+this.searcher = new Searcher(data.index);
+this.init();</pre>
+
+<p>}</p>
+
+<p>Search.prototype = $.extend({}, Navigation, new function() {</p>
+
+<pre>var suid = 1;
+
+this.init = function() {
+  var _this = this;
+  var observer = function() {
+    _this.search(_this.$input[0].value);
+  };
+  this.$input.keyup(observer);
+  this.$input.click(observer); // mac&#39;s clear field
+
+  this.searcher.ready(function(results, isLast) {
+    _this.addResults(results, isLast);
+  })
+
+  this.initNavigation();
+  this.setNavigationActive(false);
+}
+
+this.search = function(value, selectFirstMatch) {
+  value = jQuery.trim(value).toLowerCase();
+  if (value) {
+    this.setNavigationActive(true);
+  } else {
+    this.setNavigationActive(false);
+  }
+
+  if (value == &#39;&#39;) {
+    this.lastQuery = value;
+    this.$result.empty();
+    this.setNavigationActive(false);
+  } else if (value != this.lastQuery) {
+    this.lastQuery = value;
+    this.firstRun = true;
+    this.searcher.find(value);
+  }
+}
+
+this.addResults = function(results, isLast) {
+  var target = this.$result.get(0);
+  if (this.firstRun &amp;&amp; (results.length &gt; 0 || isLast)) {
+    this.$current = null;
+    this.$result.empty();
+  }
+
+  for (var i=0, l = results.length; i &lt; l; i++) {
+    target.appendChild(this.renderItem.call(this, results[i]));
+  };
+
+  if (this.firstRun &amp;&amp; results.length &gt; 0) {
+    this.firstRun = false;
+    this.$current = $(target.firstChild);
+    this.$current.addClass(&#39;current&#39;);
+  }
+  if (jQuery.browser.msie) this.$element[0].className += &#39;&#39;;
+}
+
+this.move = function(isDown) {
+  if (!this.$current) return;
+  var $next = this.$current[isDown ? &#39;next&#39; : &#39;prev&#39;]();
+  if ($next.length) {
+    this.$current.removeClass(&#39;current&#39;);
+    $next.addClass(&#39;current&#39;);
+    this.scrollIntoView($next[0], this.$view[0]);
+    this.$current = $next;
+  }
+  return true;
+}
+
+this.hlt = function(html) {
+  return this.escapeHTML(html).
+    replace(/\u0001/g, &#39;&lt;em&gt;&#39;).
+    replace(/\u0002/g, &#39;&lt;/em&gt;&#39;);
+}
+
+this.escapeHTML = function(html) {
+  return html.replace(/[&amp;&lt;&gt;]/g, function(c) {
+    return &#39;&amp;#&#39; + c.charCodeAt(0) + &#39;;&#39;;
+  });
+}</pre>
+
+<p>});</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
