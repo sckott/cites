@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Search - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/doiref.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-doi2cit">::doi2cit</a>
+    
+    <li ><a href="#method-c-search">::search</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Makefile.html">Makefile</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./DOIref.html">DOIref</a>
+  
+    <li><a href="./Search.html">Search</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Search</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-doi2cit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">doi2cit</span><span
+            class="method-args">(input)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="doi2cit-source">
+            <pre><span class="ruby-comment"># File lib/doiref.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">input</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;shit&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- doi2cit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- doi2cit-method -->
+
+    
+      <div id="method-c-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(query)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>search: <a href="Search.html">Search</a> for an object (article, book,
+etc).</p>
+
+<p>Args:</p>
+<ul><li>
+<p>query: A free form string of terms.</p>
+</li></ul>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;doiref&#39;</span>
+<span class="ruby-constant">Search</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
+<span class="ruby-constant">Search</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>)
+   <span class="ruby-constant">Search</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>, <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>])
+   <span class="ruby-constant">Search</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;piwowar sharing data increases citation PLOS&#39;</span>, 
+                             <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>,
+                                 <span class="ruby-string">&#39;priem Using social media to explore scholarly impact&#39;</span>,
+                                 <span class="ruby-string">&#39;fenner Peroxisome ligands for the treatment of breast cancer&#39;</span>])
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File lib/doiref.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">query</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+                <span class="ruby-identifier">query</span> = [<span class="ruby-identifier">query</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">query</span> = <span class="ruby-identifier">query</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">fail</span> <span class="ruby-string">&#39;query must be one of String or Array class&#39;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">url</span> = <span class="ruby-string">&quot;http://search.labs.crossref.org/links&quot;</span>
+        <span class="ruby-identifier">out</span> = 
+                <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">url</span>, 
+                        <span class="ruby-value">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">to_json</span>, 
+                        <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-string">&quot;Content-Type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/json&quot;</span>}
+                )
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">out</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
+                <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;ERROR #{out.code}&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">tt</span> = <span class="ruby-identifier">out</span>[<span class="ruby-string">&#39;results&#39;</span>]
+        <span class="ruby-identifier">coll</span> = []
+        <span class="ruby-identifier">tt</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">gg</span> = <span class="ruby-identifier">item</span>[<span class="ruby-string">&#39;doi&#39;</span>]
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">gg!</span>=<span class="ruby-keyword">nil</span>
+                        <span class="ruby-identifier">gg</span> = <span class="ruby-identifier">gg</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-string">&#39;http://dx.doi.org/&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">coll</span> <span class="ruby-operator">&lt;&lt;</span> 
+                {
+                        <span class="ruby-string">&#39;match&#39;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">item</span>[<span class="ruby-string">&#39;match&#39;</span>], 
+                        <span class="ruby-string">&#39;doi&#39;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">gg</span>,
+                        <span class="ruby-string">&#39;text&#39;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">item</span>[<span class="ruby-string">&#39;text&#39;</span>]
+                }
+        <span class="ruby-keyword">end</span>
+<span class="ruby-identifier">coll</span>.<span class="ruby-identifier">display</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- search-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- search-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
