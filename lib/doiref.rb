@@ -2,18 +2,43 @@ require 'bibtex'
 require 'httparty'
 require 'json'
 
-class DOIref	
-	def self.lookup_bib(doi, style='bibtex')
-		input = ARGV[0].to_s
-		out = HTTParty.get('http://dx.doi.org/' + doi, :headers => {"Accept" => "text/bibliography; style=" + style})
-		outout = BibTeX.parse(out.to_s)
-		outout.display
-	end
-end
-# lookup_bib(input)
+# DOIref: The single class (for now) in doiref
 
-class CRSearch
-	def self.cr_search(query)
+class DOIref	
+	##
+	# doi2cit: Get a citation in various foarmats from a DOI
+	#
+	# Args: 
+	# * doi: A DOI
+	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml, 
+	# * style: Only used if format='text', e.g., apa, harvard3
+	# * local: A locale, e.g., en-US
+
+	def self.doi2cit(doi, format='text', style='apa', locale='en-US')
+		formats = {"rdf-xml" => "application/rdf+xml",
+			"turtle" => "text/turtle",
+			"citeproc-json" => "application/vnd.citationstyles.csl+json",
+			"text" => "text/x-bibliography",
+			"ris" => "application/x-research-info-systems",
+			"bibtex" => "application/x-bibtex",
+			"crossref-xml" => "application/vnd.crossref.unixref+xml",
+			"datacite-xml" => "application/vnd.datacite.datacite+xml"}
+		formatuse = formats[format]
+		if format == 'text'
+			type = formatuse + "; style = " + style + "; locale = " + locale
+		else
+			type = formatuse
+		end
+		out = HTTParty.get('http://dx.doi.org/' + doi, :headers => {"Accept" => type})
+		if format == 'bibtex'
+			output = BibTeX.parse(out.to_s)
+		else
+			output = out.to_s
+		end
+		output.display
+	end
+
+	def self.search(query)
 		query = [query]
 		url = "http://search.labs.crossref.org/links"
 		out = 
@@ -41,6 +66,5 @@ class CRSearch
 			}
 		end
         coll.display
-        # coll.each { |i| i.display }
 	end
 end

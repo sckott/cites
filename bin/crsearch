@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 require 'doiref'
-puts CRSearch.cr_search(ARGV[0])
+puts DOIref.search(ARGV[0])

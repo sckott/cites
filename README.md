@@ -20,6 +20,14 @@ Each of the two above tasks are functions that you can use within Ruby, and are 
 
 ### Quickstart
 
+#### Install 
+
+```
+git clone git@github.com:sckott/doiref.git
+cd doiref
+gem build doiref.gemspec && gem install doiref-0.0.1.gem
+```
+
 You can run `doiref` from the command line interface (CLI) or within Ruby. 
 
 #### Search for a paper 
@@ -31,18 +39,18 @@ crsearch 'Piwowar sharing data increases citation PLOS'
 ```
 
 ```
-result...
+[{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", "text"=>"Piwowar sharing data increases citation PLOS"}]
 ```
 
 Within Ruby
 
 ```ruby
 require 'doiref'
-CRsearch.cr_search('Piwowar sharing data increases citation PLOS')
+DOIref.search('Piwowar sharing data increases citation PLOS')
 ```
 
 ```ruby
-result...
+[{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", "text"=>"Piwowar sharing data increases citation PLOS"}]=> nil
 ```
 
 #### Get a reference from a DOI
@@ -73,7 +81,7 @@ doiref 10.1186/1471-2105-14-16
 Within Ruby
 ```ruby
 require 'doiref'
-DOIref.lookup_bib('10.1371/journal.pone.0000308')
+DOIref.doi2cit('10.1371/journal.pone.0000308')
 ```
 
 ```ruby
