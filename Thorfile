@@ -1,20 +1,21 @@
-# module: doirefcli
+# module: citescli
 
 class Cites < Thor
-  require 'doiref'
+  require 'cites'
+  require 'launchy'
 
   desc "search STRING", "Get a DOI from a search string"
   # method_options :doi => :boolean
   def search(tt)
   	tt = "#{tt}"
     tt = tt.to_s.split(',')
-    out = DOIref.search(tt)
+    out = Cites.search(tt)
     puts out
     # puts "#{tt}"
     # puts opts["doi"] ? out['doi'] : out
   end
   
-  desc "getcite", "Get a citation from a DOI"
+  desc "get citation", "Get a citation from a DOI"
   # option :format => nil
   method_option :format, :default => 'text'
   method_option :style, :default => 'apa'
@@ -24,12 +25,13 @@ class Cites < Thor
   	# puts tt.to_s
   	tt = tt.to_s.split(',')
   	# puts tt
-    out = DOIref.doi2cit(tt, options[:format], options[:style], options[:locale])
+    out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
     puts out
   end
 
-  desc "hello world", "say hello world" 
-  def hello
-  	puts "hello world"
+  desc "launch paper", "Open a paper from a given DOI in your default browser" 
+  def launch(doi)
+  	url = "http://macrodocs.org/?doi=" + doi
+  	Launchy.open(url)
   end
 end

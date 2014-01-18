@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class DOIref - RDoc Documentation</title>
+<title>class Cites - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -49,7 +49,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/doiref.rb
+    <li>lib/cites.rb
   </ul>
 </nav>
 
@@ -98,9 +98,9 @@
   
     <li class="file"><a href="./Thorfile.html">Thorfile</a>
   
-    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+    <li class="file"><a href="./cites_gemspec.html">cites.gemspec</a>
   
-    <li class="file"><a href="./doiref_gemspec.html">doiref.gemspec</a>
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
   
   </ul>
 </nav>
@@ -110,9 +110,7 @@
 
   <ul class="link-list">
   
-    <li><a href="./DOIref.html">DOIref</a>
-  
-    <li><a href="./MyThorCommand.html">MyThorCommand</a>
+    <li><a href="./Cites.html">Cites</a>
   
   </ul>
 </nav>
@@ -121,11 +119,11 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class DOIref</h1>
+  <h1 class="class">class Cites</h1>
 
   <div id="description" class="description">
     
-<p>DOIref: The single class (for now) in doiref</p>
+<p>Cites: The single class (for now) in cites</p>
 
   </div><!-- description -->
 
@@ -176,22 +174,22 @@ crossref-xml,</p>
 
 <p>Examples:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;doiref&#39;</span>
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>)
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>)
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;crossref-xml&#39;</span>)
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;bibtex&#39;</span>)
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;ris&#39;</span>)
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;crossref-xml&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;bibtex&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>, <span class="ruby-string">&#39;ris&#39;</span>)
 
-<span class="ruby-identifier">out</span> = <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>([<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pone.0084549&#39;</span>], <span class="ruby-string">&#39;bibtex&#39;</span>)
-   <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">out</span>)
+<span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>([<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pone.0084549&#39;</span>], <span class="ruby-string">&#39;bibtex&#39;</span>)
+   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">out</span>)
 </pre>
           
           
 
           
           <div class="method-source-code" id="doi2cit-source">
-            <pre><span class="ruby-comment"># File lib/doiref.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">doi</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
                 <span class="ruby-identifier">doi</span> = [<span class="ruby-identifier">doi</span>]
@@ -203,7 +201,7 @@ crossref-xml,</p>
 
         <span class="ruby-identifier">cc</span> = []
         <span class="ruby-identifier">doi</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">iter</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">cc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">iter</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">style</span>, <span class="ruby-identifier">locale</span>)
+                <span class="ruby-identifier">cc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">iter</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">style</span>, <span class="ruby-identifier">locale</span>)
         <span class="ruby-keyword">end</span>
 
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">cc</span>
@@ -244,7 +242,7 @@ end</pre>
 
           
           <div class="method-source-code" id="getcite-source">
-            <pre><span class="ruby-comment"># File lib/doiref.rb, line 16</span>
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>)
         <span class="ruby-identifier">formats</span> = {<span class="ruby-string">&quot;rdf-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/rdf+xml&quot;</span>,
                 <span class="ruby-string">&quot;turtle&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/turtle&quot;</span>,
@@ -301,25 +299,25 @@ end</pre>
 
 <p>Examples:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;doiref&#39;</span>
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>)
-   <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>, <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>])
-   <span class="ruby-identifier">out</span> = <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;piwowar sharing data increases citation PLOS&#39;</span>, 
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>)
+   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>, <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>])
+   <span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;piwowar sharing data increases citation PLOS&#39;</span>, 
                              <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>,
                                  <span class="ruby-string">&#39;priem Using social media to explore scholarly impact&#39;</span>,
                                  <span class="ruby-string">&#39;fenner Peroxisome ligands for the treatment of breast cancer&#39;</span>])
    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-string">&#39;doi&#39;</span>]}
 
 <span class="ruby-comment"># Feed into the doi2cit method</span>
-<span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">out</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-string">&#39;doi&#39;</span>]})
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">out</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-string">&#39;doi&#39;</span>]})
 </pre>
           
           
 
           
           <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/doiref.rb, line 102</span>
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">query</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
                 <span class="ruby-identifier">query</span> = [<span class="ruby-identifier">query</span>]
@@ -385,7 +383,7 @@ end</pre>
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File lib/doiref.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">input</span>)
         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">iter</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">display</span>,<span class="ruby-string">&quot;\n&quot;</span>

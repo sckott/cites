@@ -2,9 +2,9 @@ require 'bibtex'
 require 'httparty'
 require 'json'
 
-# DOIref: The single class (for now) in doiref
+# Cites: The single class (for now) in cites
 
-class DOIref
+class Cites
 
 	# def initialize(doi, format='text', style='apa', locale='en-US')
  #    	@doi = doi
@@ -48,15 +48,15 @@ class DOIref
 	# * locale: A locale, e.g., en-US
 	# 
 	# Examples:
-	#     require 'doiref'
-	#     DOIref.doi2cit('10.1371/journal.pone.0000308')
-	#     DOIref.doi2cit('10.1371/journal.pbio.0030427')
-	#     DOIref.doi2cit('10.1371/journal.pbio.0030427', 'crossref-xml')
-	#     DOIref.doi2cit('10.1371/journal.pbio.0030427', 'bibtex')
-	#     DOIref.doi2cit('10.1371/journal.pbio.0030427', 'ris')
+	#     require 'cites'
+	#     Cites.doi2cit('10.1371/journal.pone.0000308')
+	#     Cites.doi2cit('10.1371/journal.pbio.0030427')
+	#     Cites.doi2cit('10.1371/journal.pbio.0030427', 'crossref-xml')
+	#     Cites.doi2cit('10.1371/journal.pbio.0030427', 'bibtex')
+	#     Cites.doi2cit('10.1371/journal.pbio.0030427', 'ris')
 	#
-	#     out = DOIref.doi2cit(['10.1371/journal.pone.0000308','10.1371/journal.pbio.0030427','10.1371/journal.pone.0084549'], 'bibtex')
-	# 	  DOIref.show(out)
+	#     out = Cites.doi2cit(['10.1371/journal.pone.0000308','10.1371/journal.pbio.0030427','10.1371/journal.pone.0084549'], 'bibtex')
+	# 	  Cites.show(out)
 	def self.doi2cit(doi, format='text', style='apa', locale='en-US')
 		if doi.class == String
 			doi = [doi]
@@ -68,7 +68,7 @@ class DOIref
 
 		cc = []
 		doi.each do |iter|
-			cc << DOIref.getcite(iter, format, style, locale)
+			cc << Cites.getcite(iter, format, style, locale)
 		end
 
 		return cc
@@ -87,18 +87,18 @@ class DOIref
 	# * query: A free form string of terms.
 	#
 	# Examples:
-	#     require 'doiref'
-	#     DOIref.search('Piwowar sharing data increases citation PLOS')
-	#     DOIref.search('boettiger Modeling stabilizing selection')
-	# 	  DOIref.search(['Piwowar sharing data increases citation PLOS', 'boettiger Modeling stabilizing selection'])
-	# 	  out = DOIref.search(['piwowar sharing data increases citation PLOS', 
+	#     require 'cites'
+	#     Cites.search('Piwowar sharing data increases citation PLOS')
+	#     Cites.search('boettiger Modeling stabilizing selection')
+	# 	  Cites.search(['Piwowar sharing data increases citation PLOS', 'boettiger Modeling stabilizing selection'])
+	# 	  out = Cites.search(['piwowar sharing data increases citation PLOS', 
 	# 	  				'boettiger Modeling stabilizing selection',
 	# 					'priem Using social media to explore scholarly impact',
 	#					'fenner Peroxisome ligands for the treatment of breast cancer'])
 	# 	  out.map {|i| i['doi']}
 	#     
 	#     # Feed into the doi2cit method
-	#     DOIref.doi2cit(out.map {|i| i['doi']})
+	#     Cites.doi2cit(out.map {|i| i['doi']})
 	def self.search(query)
 		if query.class == String
 			query = [query]
@@ -141,7 +141,7 @@ class DOIref
 	# 	input.each do |iter|
 	# 		cc << iter['doi']
 	# 	end
-	# 	out = DOIref.doi2cit(cc)
+	# 	out = Cites.doi2cit(cc)
 	# 	return out
 	# end
 end

@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>doiref.gemspec - RDoc Documentation</title>
+<title>cites.gemspec - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -57,9 +57,9 @@
   
     <li class="file"><a href="./Thorfile.html">Thorfile</a>
   
-    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+    <li class="file"><a href="./cites_gemspec.html">cites.gemspec</a>
   
-    <li class="file"><a href="./doiref_gemspec.html">doiref.gemspec</a>
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
   
   </ul>
 </nav>
@@ -69,9 +69,7 @@
 
   <ul class="link-list">
   
-    <li><a href="./DOIref.html">DOIref</a>
-  
-    <li><a href="./MyThorCommand.html">MyThorCommand</a>
+    <li><a href="./Cites.html">Cites</a>
   
   </ul>
 </nav>
@@ -83,20 +81,20 @@
   
 <p>Gem::Specification.new do |s|</p>
 
-<pre>s.name        = &#39;doiref&#39;
+<pre>s.name        = &#39;cites&#39;
 s.version     = &#39;0.0.1&#39;
-s.date        = &#39;2014-01-03&#39;
+s.date        = &#39;2014-01-18&#39;
 s.summary     = &quot;Gets citations from DOIs&quot;
-s.description = &quot;Gets citations from DOIs, like bibtex entries&quot;
+s.description = &quot;Search for articles, and get citations from DOIs&quot;
 s.authors     = [&quot;Scott Chamberlain&quot;]
 s.email       = &#39;myrmecocystus@gmail.com&#39;
-s.files       = [&quot;lib/doiref.rb&quot;]
-s.homepage    = &#39;http://github.com/schamberlain/doiref&#39;
+s.files       = [&quot;lib/cites.rb&quot;]
+s.homepage    = &#39;http://github.com/sckott/cites&#39;
 s.licenses    = &#39;CC0&#39;
 s.bindir      = &#39;bin&#39;
 s.executables = [&#39;crsearch&#39;,&#39;crref&#39;]
-s.add_runtime_dependency &#39;bibtex-ruby&#39;, &#39;~&gt; 2.3&#39;
-s.add_runtime_dependency &#39;httparty&#39;, &#39;~&gt; 0.11&#39;
+s.add_runtime_dependency &#39;bibtex-ruby&#39;, &#39;~&gt; 3.0&#39;
+s.add_runtime_dependency &#39;httparty&#39;, &#39;~&gt; 0.12&#39;
 s.add_runtime_dependency &#39;thor&#39;, &#39;~&gt; 0.18&#39;</pre>
 
 <p>end</p>
