@@ -30,8 +30,14 @@ class Cites < Thor
   end
 
   desc "launch paper", "Open a paper from a given DOI in your default browser" 
+  method_option :oa, :type => :boolean, :default => 'true'
   def launch(doi)
-  	url = "http://macrodocs.org/?doi=" + doi
-  	Launchy.open(url)
+    if options[:oa]
+      url = "http://macrodocs.org/?doi=" + doi
+      Launchy.open(url)
+    else
+      url = "http://dx.doi.org/" + doi
+      Launchy.open(url)
+    end
   end
 end

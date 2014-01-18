@@ -3,7 +3,7 @@ cites
 
 **this is alpha software, so expect changes**
 
-### What it is?  
+## What it is?  
 
 __cites does two things:__ 
 
@@ -12,16 +12,16 @@ __cites does two things:__
 
 Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case I think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `thor cites:search 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `thor cites:getcite DOI/string | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. See more examples below.
 
-### Dependencies
+## Dependencies
 
 * `HTTParty` gem to make web calls to Crossref APIs
 * `bibtex-ruby` gem to parse the bibtex
 * `json` gem to convert to/from JSON
 * `thor` gem to do `cites` stuff on the command line
 
-### Quickstart
+## Quickstart
 
-#### Install 
+### Install 
 
 Install dependencies
 
@@ -38,7 +38,7 @@ make
 
 Running `make` will buil and install the gem, and install options into Thor so that you can do citation stuff from the cli or within Ruby. 
 
-#### Thor
+### Thor
 
 I decided to use [Thor](http://whatisthor.com/) to make functions within `cites` available on the cli. Thor is cool. For example, you can list the commands available like
 
@@ -79,7 +79,7 @@ This is what's associated with `cites` from the cli using Thor.
 
 Other commands are available, just type `thor` on the cli, and press enter. 
 
-#### Search for a paper 
+### Search for a paper 
 
 From the CLI
 
@@ -108,7 +108,7 @@ cites.search('Piwowar sharing data increases citation PLOS')
 [{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", "text"=>"Piwowar sharing data increases citation PLOS"}]=> nil
 ```
 
-#### Get a reference from a DOI
+### Get a reference from a DOI
 
 From the CLI, default output is text format, apa style, locale en-US
 
@@ -200,11 +200,37 @@ cites.doi2cit('10.1371/journal.pone.0000308')
 }
 ```
 
-### Video
+### Open paper in browser
+
+Uses [Macrodocs](http://macrodocs.org/). The default, using Macrodocs, only works for open access (#OA) articles. You can set the option `oa` to be false. 
+
+```
+thor cites:launch '10.1371/journal.pone.0000308'
+```
+
+```
+# launches in your default browser with url http://macrodocs.org/?doi=10.1371/journal.pone.0000308
+```
+
+It's super simple, it just concatenates your DOI onto `http://macrodocs.org/?doi=` to give in this case [http://macrodocs.org/?doi=10.1371/journal.pone.0000308](http://macrodocs.org/?doi=10.1371/journal.pone.0000308) for what you will get from that command. 
+
+When you don't have an open access article, set the oa option flag to false, like `--oa=false`
+
+```
+thor cites:launch '10.1111/1365-2745.12157' --oa=false
+```
+
+```
+# launches in your default browser with url http://dx.doi.org/10.1371/journal.pone.0000308
+```
+
+Setting `--oa=false` simply concatenates your doi onto `http://dx.doi.org/`, which then attempts to resolve to likely the publishers page for the article.
+
+## Video
 
 __Asciicast video [here](http://asciinema.org/a/7040)__
 
-### To do
+## To do
 
 * Add parameter for citation format, right now only gives back bibtex. Crossref API will give back many different formats though. 
 * Add other Crossref metadata search functions. 
