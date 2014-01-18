@@ -10,13 +10,14 @@ __cites does two things:__
 * Search for a paper. Uses the CrossRef Metadata Search API, which allows POST requests of free form text. 
 * Get a citation from a DOI. Uses CrossRef [citation formatting service](http://labs.crossref.org/citation-formatting-service/) to search for citation information.
 
-Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case I think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `crsearch 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `cites DOI/string | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. 
+Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case I think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `thor cites:search 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `thor cites:getcite DOI/string | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. See more examples below.
 
 ### Dependencies
 
 * `HTTParty` gem to make web calls to Crossref APIs
 * `bibtex-ruby` gem to parse the bibtex
 * `json` gem to convert to/from JSON
+* `thor` gem to do `cites` stuff on the command line
 
 ### Quickstart
 
@@ -51,6 +52,27 @@ cites
 thor cites:getcite        # Get a citation from a DOI
 thor cites:launch paper   # Open a paper from a given DOI in your default browser
 thor cites:search STRING  # Get a DOI from a search string
+```
+
+Get help for a particular method
+
+```
+thor help cites:getcite
+```
+
+```
+Usage:
+  thor cites:getcite
+
+Options:
+  [--format=FORMAT]
+                     # Default: text
+  [--style=STYLE]
+                     # Default: apa
+  [--locale=LOCALE]
+                     # Default: en-US
+
+Get a citation from a DOI
 ```
 
 This is what's associated with `cites` from the cli using Thor.
