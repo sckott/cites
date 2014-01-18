@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Thorfile - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Makefile.html">Makefile</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./Thorfile.html">Thorfile</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./doiref_gemspec.html">doiref.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./DOIref.html">DOIref</a>
+  
+    <li><a href="./MyThorCommand.html">MyThorCommand</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p># module: doirefcli</p>
+
+<p>class Cites &lt; Thor</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;doiref&#39;</span>
+
+<span class="ruby-identifier">desc</span> <span class="ruby-string">&quot;search STRING&quot;</span>, <span class="ruby-string">&quot;Get a DOI from a search string&quot;</span>
+<span class="ruby-comment"># method_options :doi =&gt; :boolean</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>(<span class="ruby-identifier">tt</span>)
+      <span class="ruby-identifier">tt</span> = <span class="ruby-node">&quot;#{tt}&quot;</span>
+  <span class="ruby-identifier">tt</span> = <span class="ruby-identifier">tt</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">tt</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">out</span>
+  <span class="ruby-comment"># puts &quot;#{tt}&quot;</span>
+  <span class="ruby-comment"># puts opts[&quot;doi&quot;] ? out[&#39;doi&#39;] : out</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">desc</span> <span class="ruby-string">&quot;getcite&quot;</span>, <span class="ruby-string">&quot;Get a citation from a DOI&quot;</span>
+<span class="ruby-comment"># option :format =&gt; nil</span>
+<span class="ruby-identifier">method_option</span> :<span class="ruby-identifier">format</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;text&#39;</span>
+<span class="ruby-identifier">method_option</span> :<span class="ruby-identifier">style</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;apa&#39;</span>
+<span class="ruby-identifier">method_option</span> :<span class="ruby-identifier">locale</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;en-US&#39;</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">tt</span>)
+      <span class="ruby-identifier">tt</span> = <span class="ruby-node">&quot;#{tt}&quot;</span>
+      <span class="ruby-comment"># puts tt.to_s</span>
+      <span class="ruby-identifier">tt</span> = <span class="ruby-identifier">tt</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+      <span class="ruby-comment"># puts tt</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">DOIref</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">tt</span>, <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">format</span>], <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">style</span>], <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">locale</span>])
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

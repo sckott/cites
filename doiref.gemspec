@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/schamberlain/doiref'
   s.licenses    = 'CC0'
   s.bindir      = 'bin'
-  s.executables = ['crsearch','doiref']
+  s.executables = ['crsearch','crref']
   s.add_runtime_dependency 'bibtex-ruby', '~> 2.3'
   s.add_runtime_dependency 'httparty', '~> 0.11'
+  s.add_runtime_dependency 'thor', '~> 0.18'
 end
