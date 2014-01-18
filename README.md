@@ -25,7 +25,7 @@ Each of the two above tasks are functions that you can use within Ruby, and are 
 ```
 git clone git@github.com:sckott/doiref.git
 cd doiref
-gem build doiref.gemspec && gem install doiref-0.0.1.gem
+make
 ```
 
 You can run `doiref` from the command line interface (CLI) or within Ruby. 
