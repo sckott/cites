@@ -27,4 +27,9 @@ class Cites < Thor
     out = DOIref.doi2cit(tt, options[:format], options[:style], options[:locale])
     puts out
   end
+
+  desc "hello world", "say hello world" 
+  def hello
+  	puts "hello world"
+  end
 end
