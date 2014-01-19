@@ -228,7 +228,7 @@ Setting `--oa=false` simply concatenates your doi onto `http://dx.doi.org/`, whi
 
 ## Video
 
-__Asciicast video [here](http://asciinema.org/a/7040)__
+__Asciicast video [here](http://asciinema.org/a/7261)__
 
 ## To do
 
