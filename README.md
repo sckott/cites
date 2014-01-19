@@ -10,7 +10,7 @@ __cites does two things:__
 * Search for a paper. Uses the CrossRef Metadata Search API, which allows POST requests of free form text. 
 * Get a citation from a DOI. Uses CrossRef [citation formatting service](http://labs.crossref.org/citation-formatting-service/) to search for citation information.
 
-Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case I think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `thor cites:search 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `thor cites:getcite DOI/string | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. See more examples below.
+Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case I think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `thor cite:search 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `thor cite:getcite DOI/string | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. See more examples below.
 
 ## Dependencies
 
@@ -49,20 +49,20 @@ thor list
 ```
 cites
 -----
-thor cites:getcite        # Get a citation from a DOI
-thor cites:launch paper   # Open a paper from a given DOI in your default browser
-thor cites:search STRING  # Get a DOI from a search string
+thor cite:getcite        # Get a citation from a DOI
+thor cite:launch paper   # Open a paper from a given DOI in your default browser
+thor cite:search STRING  # Get a DOI from a search string
 ```
 
 Get help for a particular method
 
 ```
-thor help cites:getcite
+thor help cite:getcite
 ```
 
 ```
 Usage:
-  thor cites:getcite
+  thor cite:getcite
 
 Options:
   [--format=FORMAT]
@@ -84,7 +84,7 @@ Other commands are available, just type `thor` on the cli, and press enter.
 From the CLI
 
 ```
-thor cites:search 'Piwowar sharing data increases citation PLOS'
+thor cite:search 'Piwowar sharing data increases citation PLOS'
 ```
 
 ```
@@ -94,7 +94,7 @@ thor cites:search 'Piwowar sharing data increases citation PLOS'
 And you can do many searches, separated with commas, like
 
 ```
-thor cites:search 'Piwowar sharing data increases citation PLOS,boettiger Modeling stabilizing selection'
+thor cite:search 'Piwowar sharing data increases citation PLOS,boettiger Modeling stabilizing selection'
 ```
 
 Search within Ruby
@@ -113,7 +113,7 @@ cites.search('Piwowar sharing data increases citation PLOS')
 From the CLI, default output is text format, apa style, locale en-US
 
 ```
-thor cites:getcite '10.1186/1471-2105-14-16'
+thor cite:getcite '10.1186/1471-2105-14-16'
 ```
 
 ```
@@ -123,7 +123,7 @@ Boyle, B., Hopkins, N., Lu, Z., Raygoza Garay, J. A., Mozzherin, D., Rees, T., M
 Because we're using [thor](http://whatisthor.com/) you can pass in options to the call on the cli, like here choose `ris` for the format
 
 ```
-thor cites:getcite '10.1371/journal.pone.0000308' --format=ris
+thor cite:getcite '10.1371/journal.pone.0000308' --format=ris
 ```
 
 ```
@@ -146,7 +146,7 @@ ER  -
 And here `bibtex` for the format
 
 ```
-thor cites:getcite '10.1371/journal.pone.0000308' --format=bibtex
+thor cite:getcite '10.1371/journal.pone.0000308' --format=bibtex
 ```
 
 ```
@@ -169,7 +169,7 @@ thor cites:getcite '10.1371/journal.pone.0000308' --format=bibtex
 Two more options, `style` and `locale` are only available with text format, like
 
 ```
-thor cites:getcite '10.1371/journal.pone.0000308' --format=text --style=mla --locale=fr-FR
+thor cite:getcite '10.1371/journal.pone.0000308' --format=text --style=mla --locale=fr-FR
 ```
 
 ```
@@ -205,7 +205,7 @@ cites.doi2cit('10.1371/journal.pone.0000308')
 Uses [Macrodocs](http://macrodocs.org/). The default, using Macrodocs, only works for open access (#OA) articles. You can set the option `oa` to be false. 
 
 ```
-thor cites:launch '10.1371/journal.pone.0000308'
+thor cite:launch '10.1371/journal.pone.0000308'
 ```
 
 ```
@@ -217,7 +217,7 @@ It's super simple, it just concatenates your DOI onto `http://macrodocs.org/?doi
 When you don't have an open access article, set the oa option flag to false, like `--oa=false`
 
 ```
-thor cites:launch '10.1111/1365-2745.12157' --oa=false
+thor cite:launch '10.1111/1365-2745.12157' --oa=false
 ```
 
 ```

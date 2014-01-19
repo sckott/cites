@@ -1,6 +1,7 @@
 # module: citescli
 
-class Cites < Thor
+class Cite < Thor
+  include Thor::Actions
   require 'cites'
   require 'launchy'
 
@@ -20,7 +21,7 @@ class Cites < Thor
   method_option :format, :default => 'text'
   method_option :style, :default => 'apa'
   method_option :locale, :default => 'en-US'
-  def getcite(tt)
+  def get(tt)
   	tt = "#{tt}"
   	# puts tt.to_s
   	tt = tt.to_s.split(',')
