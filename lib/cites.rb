@@ -28,11 +28,22 @@ class Cites
 		else
 			type = formatuse
 		end
-		out = HTTParty.get('http://dx.doi.org/' + doi, :headers => {"Accept" => type})
+		doi = 'http://dx.doi.org/' + doi
+		response = HTTParty.get(doi, :headers => {"Accept" => type})
+		
+		case response.code
+		  when 200
+		    content = response.to_s
+		  when 404
+		    raise "DOI #{doi} could not be resolved (404)"
+		  when 500...600
+		    raise "ZOMG ERROR #{response.code}"
+		end
+
 		if format == 'bibtex'
-			output = BibTeX.parse(out.to_s)
+			output = BibTeX.parse(content)
 		else
-			output = out.to_s
+			output = content
 		end
 		# output.display
 		return output

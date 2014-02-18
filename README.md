@@ -101,7 +101,7 @@ Search within Ruby
 
 ```ruby
 require 'cites'
-cites.search('Piwowar sharing data increases citation PLOS')
+Cites.search('Piwowar sharing data increases citation PLOS')
 ```
 
 ```ruby
@@ -180,7 +180,7 @@ Within Ruby
 
 ```ruby
 require 'cites'
-cites.doi2cit('10.1371/journal.pone.0000308')
+Cites.doi2cit('10.1371/journal.pone.0000308')
 ```
 
 ```ruby
