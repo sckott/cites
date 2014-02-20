@@ -4,6 +4,8 @@ class Cite < Thor
   include Thor::Actions
   require 'cites'
   require 'launchy'
+  require 'json'
+  require 'pp'
 
   desc "search STRING", "Get a DOI from a search string"
   # method_options :doi => :boolean
@@ -26,8 +28,13 @@ class Cite < Thor
   	# puts tt.to_s
   	tt = tt.to_s.split(',')
   	# puts tt
-    out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
-    puts out
+    begin
+      puts options[:format]
+      out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
+    rescue Exception => e
+      abort(e.message)
+    end
+    puts out[0]
   end
 
   desc "launch paper", "Open a paper from a given DOI in your default browser" 
