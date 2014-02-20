@@ -34,9 +34,6 @@ class Cite < Thor
       abort(e.message)
     end
     
-    if options[:format] == 'citeproc-json'
-      out = out.collect{| i | JSON.parse(i)}
-    end
     puts "Found #{out.length} " + (out.length > 1 ? "matches" : "match")
     pp out
 

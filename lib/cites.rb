@@ -79,7 +79,11 @@ class Cites
 
 		cc = []
 		doi.each do |iter|
-			cc << Cites.getcite(iter, format, style, locale)
+			content = Cites.getcite(iter, format, style, locale)
+			if format == 'citeproc-json'
+				content = JSON.parse(content)
+			end
+			cc << content
 		end
 
 		return cc
