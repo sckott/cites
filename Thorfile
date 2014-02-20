@@ -29,12 +29,17 @@ class Cite < Thor
   	tt = tt.to_s.split(',')
   	# puts tt
     begin
-      puts options[:format]
       out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
     rescue Exception => e
       abort(e.message)
     end
-    puts out[0]
+    
+    if options[:format] == 'citeproc-json'
+      out = out.collect{| i | JSON.parse(i)}
+    end
+    puts "Found #{out.length} " + (out.length > 1 ? "matches" : "match")
+    pp out
+
   end
 
   desc "launch paper", "Open a paper from a given DOI in your default browser" 
