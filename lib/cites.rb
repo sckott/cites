@@ -68,6 +68,10 @@ class Cites
 	#
 	#     out = Cites.doi2cit(['10.1371/journal.pone.0000308','10.1371/journal.pbio.0030427','10.1371/journal.pone.0084549'], 'bibtex')
 	# 	  Cites.show(out)
+	#
+	# Returns an array of citation content. The structure of the content will 
+	# depend on the format requested.
+	#
 	def self.doi2cit(doi, format='text', style='apa', locale='en-US')
 		if doi.class == String
 			doi = [doi]
