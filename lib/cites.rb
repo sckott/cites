@@ -31,11 +31,17 @@ class Cites
 		doi = 'http://dx.doi.org/' + doi
 		response = HTTParty.get(doi, :headers => {"Accept" => type})
 		
+		# See CrossCite documentation http://crosscite.org/cn/
+
 		case response.code
 		  when 200
 		    content = response.to_s
+		  when 204
+		  	raise "The request was OK but there was no metadata available"
 		  when 404
-		    raise "DOI #{doi} could not be resolved (404)"
+		    raise "The DOI requested doesn't exist"
+		  when 406
+		  	raise "Can't serve any requested content type"
 		  when 500...600
 		    raise "ZOMG ERROR #{response.code}"
 		end
