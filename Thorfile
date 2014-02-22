@@ -23,13 +23,15 @@ class Cite < Thor
   method_option :format, :default => 'text'
   method_option :style, :default => 'apa'
   method_option :locale, :default => 'en-US'
+  method_option :cache, :default => true
   def get(tt)
   	tt = "#{tt}"
   	# puts tt.to_s
   	tt = tt.to_s.split(',')
   	# puts tt
     begin
-      out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
+      out = Cites.doi2cit(tt, options[:format], options[:style], 
+                          options[:locale], options[:cache])
     rescue Exception => e
       abort(e.message)
     end
