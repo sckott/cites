@@ -1,21 +1,47 @@
+require 'api_cache'
 require 'bibtex'
 require 'httparty'
 require 'json'
+require 'moneta'
+
+APICache.store = Moneta.new(:File, dir: 'cache')
+
+def response_ok(code)
+	# See CrossCite documentation http://crosscite.org/cn/
+	case code
+	  when 200
+	    return true
+	  when 204
+	  	raise "The request was OK but there was no metadata available"
+	  when 404
+	    raise "The DOI requested doesn't exist"
+	  when 406
+	  	raise "Can't serve any requested content type"
+	  when 500...600
+	    raise "ZOMG ERROR #{response.code}"
+  	end
+end
 
 # Cites: The single class (for now) in cites
 
 class Cites
 
-	# def initialize(doi, format='text', style='apa', locale='en-US')
- #    	@doi = doi
- #    	@format = format
- #    	@style = style
- #    	@locale = locale
- #  	end
-
-	def self.getcite(doi, format='text', style='apa', locale='en-US')
-		formats = {
-			"rdf-xml" => "application/rdf+xml",
+ 	##
+	# Get a single citation in various formats from a DOI
+	#
+	# Args: 
+	# * doi: A DOI
+	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml, 
+	# * style: Only used if format='text', e.g., apa, harvard3
+	# * locale: A locale, e.g., en-US
+	# * cache: Should cache be used
+	# 	* true: Try fetcing from cache and store to cache (default)
+	#   * false: Do use cache at all
+	#   * 'flush': Get a fresh response and cache it
+	#
+	def self.getcite(doi, format='text', style='apa', locale='en-US', 
+					 cache=true)
+		formats = {"rdf-xml" => "application/rdf+xml",
 			"turtle" => "text/turtle",
 			"citeproc-json" => "application/vnd.citationstyles.csl+json",
 			"text" => "text/x-bibliography",
@@ -31,17 +57,41 @@ class Cites
 			type = formatuse
 		end
 		doi = 'http://dx.doi.org/' + doi
-		response = HTTParty.get(doi, :headers => {"Accept" => type})
-		
-		case response.code
-		  when 200
-		    content = response.to_s
-		  when 404
-		    raise "DOI #{doi} could not be resolved (404)"
-		  when 500...600
-		    raise "ZOMG ERROR #{response.code}"
-		end
 
+		if cache == true or cache == 'flush'
+			if cache == true
+				cache_time = 6000
+				msg = "Requested DOI not in cache or is stale, requesting..."
+			elsif cache == 'flush'
+				cache_time = 1
+				msg = "Flushing cache, requesting..."
+			end
+			# Keep cache data valid forever
+			# [todo] - should using cache be reported?
+			content = APICache.get(doi, :cache => cache_time, 
+								   :valid => :forever, :period => 0,
+								   :timeout => 30) do
+			    puts msg
+			    response = HTTParty.get(doi, :headers => {"Accept" => type})
+			   
+			    # If response code is ok (200) get response body and return
+			    # that from this block. Otherwise an error will be raised.
+			    if response_ok(response.code)
+			    	content = response.body
+			    end
+				content
+			end
+		elsif cache == false
+			puts "Not using cache, requesting..."
+			response = HTTParty.get(doi, :headers => {"Accept" => type})
+			
+			if response_ok(response.code)
+			    content = response.body
+			end
+		else
+			fail "Invalid cache value #{cache}"
+		end
+		# response = HTTParty.get(doi, :headers => {"Accept" => type})
 		if format == 'bibtex'
 			output = BibTeX.parse(content)
 		else
@@ -52,13 +102,17 @@ class Cites
 	end
 
 	##
-	# Get a citation in various foarmats from a DOI
+	# Get a citation in various formats from a DOI
 	#
 	# Args: 
 	# * doi: A DOI
 	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml, 
 	# * style: Only used if format='text', e.g., apa, harvard3
 	# * locale: A locale, e.g., en-US
+	# * cache: Should cache be used
+	# 	* true: Try fetcing from cache and store to cache (default)
+	#   * false: Do use cache at all
+	#   * 'flush': Get a fresh response and cache it
 	# 
 	# Examples:
 	#     require 'cites'
@@ -70,7 +124,12 @@ class Cites
 	#
 	#     out = Cites.doi2cit(['10.1371/journal.pone.0000308','10.1371/journal.pbio.0030427','10.1371/journal.pone.0084549'], 'bibtex')
 	# 	  Cites.show(out)
-	def self.doi2cit(doi, format='text', style='apa', locale='en-US')
+	#
+	# Returns an array of citation content. The structure of the content will 
+	# depend on the format requested.
+	#
+	def self.doi2cit(doi, format='text', style='apa', locale='en-US', 
+					 cache=true)
 		if doi.class == String
 			doi = [doi]
 		elsif doi.class == Array
@@ -81,12 +140,20 @@ class Cites
 
 		cc = []
 		doi.each do |iter|
+<<<<<<< HEAD
 			if iter.include?('http://')
 				iter = iter.sub('http://dx.doi.org/', '')
 			else
 				nil
 			end
 			cc << Cites.getcite(doi=iter, format=format, style=style, locale=locale)
+=======
+			content = Cites.getcite(iter, format, style, locale, cache)
+			if format == 'citeproc-json'
+				content = JSON.parse(content)
+			end
+			cc << content
+>>>>>>> 44e9e8e1d51e09b6e3062776f14126c49dae6210
 		end
 
 		return cc

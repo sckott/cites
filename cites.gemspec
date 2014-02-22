@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'httparty', '~> 0.12'
   s.add_runtime_dependency 'thor', '~> 0.18'
   s.add_runtime_dependency 'json', '~> 1.8'
+  s.add_runtime_dependency 'api_cache', '~> 0.2'
+  s.add_runtime_dependency 'moneta', '~> 0.7'
 end

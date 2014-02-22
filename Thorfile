@@ -4,6 +4,8 @@ class Cite < Thor
   include Thor::Actions
   require 'cites'
   require 'launchy'
+  require 'json'
+  require 'pp'
 
   desc "match STRING", "Look for matches in free form citations, get a match and DOI"
   # method_options :doi => :boolean
@@ -29,17 +31,25 @@ class Cite < Thor
   end
   
   desc "get citation", "Get a citation from a DOI"
-  # option :format => nil
-  method_option :format, :default => 'bibtex'
-  method_option :style, :default => nil
-  method_option :locale, :default => nil
+  method_option :format, :default => 'text'
+  method_option :style, :default => 'apa'
+  method_option :locale, :default => 'en-US'
+  method_option :cache, :default => true
   def get(tt)
   	tt = "#{tt}"
   	# puts tt.to_s
   	tt = tt.to_s.split(',')
   	# puts tt
-    out = Cites.doi2cit(tt, options[:format], options[:style], options[:locale])
-    puts out
+    begin
+      out = Cites.doi2cit(tt, options[:format], options[:style], 
+                          options[:locale], options[:cache])
+    rescue Exception => e
+      abort(e.message)
+    end
+    
+    puts "Found #{out.length} " + (out.length > 1 ? "matches" : "match")
+    pp out
+
   end
 
   desc "launch paper", "Open a paper from a given DOI in your default browser" 
