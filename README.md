@@ -79,7 +79,7 @@ This is what's associated with `cites` from the cli using Thor.
 
 Other commands are available, just type `thor` on the cli, and press enter. 
 
-### Search for a paper 
+### Match to free form citations for a paper
 
 From the CLI
 
@@ -107,6 +107,47 @@ Cites.search('Piwowar sharing data increases citation PLOS')
 ```ruby
 [{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", "text"=>"Piwowar sharing data increases citation PLOS"}]=> nil
 ```
+
+### Metadata search
+
+This is searching the metadata for articles, not matching citations as in the last example. This uses the CrossRef metadata search API, at the `/dois` endpoint documented here: http://search.crossref.org/help/api
+
+From the CLI
+
+```
+thor cite:search 'ecology' --rows=5
+```
+
+```
+{"doi"=>"http://dx.doi.org/10.5402/ecology", "normalizedScore"=>100, "title"=>"ISRN Ecology", "year"=>nil}
+{"doi"=>"http://dx.doi.org/10.1155/8641", "normalizedScore"=>100, "title"=>"ISRN Ecology", "year"=>nil}
+{"doi"=>"http://dx.doi.org/10.4996/fireecology", "normalizedScore"=>100, "title"=>"Fire Ecology", "year"=>nil}
+{"doi"=>"http://dx.doi.org/10.1111/(issn)1439-0485", "normalizedScore"=>88, "title"=>"Marine Ecology", "year"=>nil}
+{"doi"=>"http://dx.doi.org/10.1111/(issn)1365-2435", "normalizedScore"=>88, "title"=>"Functional Ecology", "year"=>nil}
+```
+
+```
+thor cite:search 'ecology,birds' --rows=5
+```
+
+```
+{"doi"=>"http://dx.doi.org/10.2307/1935170", "normalizedScore"=>100, "title"=>"Population Ecology if Migratory Birds (Symposium)", "year"=>"1974"}
+{"doi"=>"http://dx.doi.org/10.1016/b978-012517367-4.50007-3", "normalizedScore"=>98, "title"=>"Raptors and other soaring birds", "year"=>"2007"}
+{"doi"=>"http://dx.doi.org/10.1016/b978-012517367-4.50029-2", "normalizedScore"=>98, "title"=>"Glossary", "year"=>"2007"}
+{"doi"=>"http://dx.doi.org/10.1016/b978-012517367-4.50030-9", "normalizedScore"=>98, "title"=>"References", "year"=>"2007"}
+{"doi"=>"http://dx.doi.org/10.1016/b978-012675555-8/50008-7", "normalizedScore"=>98, "title"=>"References", "year"=>"2001"}
+```
+
+From within Ruby
+
+```ruby
+
+```
+
+```ruby
+
+```
+
 
 ### Get a reference from a DOI
 

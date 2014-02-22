@@ -14,14 +14,16 @@ class Cites
  #  	end
 
 	def self.getcite(doi, format='text', style='apa', locale='en-US')
-		formats = {"rdf-xml" => "application/rdf+xml",
+		formats = {
+			"rdf-xml" => "application/rdf+xml",
 			"turtle" => "text/turtle",
 			"citeproc-json" => "application/vnd.citationstyles.csl+json",
 			"text" => "text/x-bibliography",
-			"ris" => "application/x-research-info-systems",
+			"ris" => "application/x-rematch-info-systems",
 			"bibtex" => "application/x-bibtex",
 			"crossref-xml" => "application/vnd.crossref.unixref+xml",
-			"datacite-xml" => "application/vnd.datacite.datacite+xml"}
+			"datacite-xml" => "application/vnd.datacite.datacite+xml"
+		}
 		formatuse = formats[format]
 		if format == 'text'
 			type = formatuse + "; style = " + style + "; locale = " + locale
@@ -79,7 +81,12 @@ class Cites
 
 		cc = []
 		doi.each do |iter|
-			cc << Cites.getcite(iter, format, style, locale)
+			if iter.include?('http://')
+				iter = iter.sub('http://dx.doi.org/', '')
+			else
+				nil
+			end
+			cc << Cites.getcite(doi=iter, format=format, style=style, locale=locale)
 		end
 
 		return cc
@@ -92,17 +99,17 @@ class Cites
 	end
 
 	##
-	# search: Search for an object (article, book, etc).
+	# match: Look for matches to free-form citations to DOIs for an object (article, book, etc). in CrossRef
 	#
 	# Args: 
 	# * query: A free form string of terms.
 	#
 	# Examples:
 	#     require 'cites'
-	#     Cites.search('Piwowar sharing data increases citation PLOS')
-	#     Cites.search('boettiger Modeling stabilizing selection')
-	# 	  Cites.search(['Piwowar sharing data increases citation PLOS', 'boettiger Modeling stabilizing selection'])
-	# 	  out = Cites.search(['piwowar sharing data increases citation PLOS', 
+	#     Cites.match('Piwowar sharing data increases citation PLOS')
+	#     Cites.match('boettiger Modeling stabilizing selection')
+	# 	  Cites.match(['Piwowar sharing data increases citation PLOS', 'boettiger Modeling stabilizing selection'])
+	# 	  out = Cites.match(['piwowar sharing data increases citation PLOS', 
 	# 	  				'boettiger Modeling stabilizing selection',
 	# 					'priem Using social media to explore scholarly impact',
 	#					'fenner Peroxisome ligands for the treatment of breast cancer'])
@@ -110,7 +117,7 @@ class Cites
 	#     
 	#     # Feed into the doi2cit method
 	#     Cites.doi2cit(out.map {|i| i['doi']})
-	def self.search(query)
+	def self.match(query)
 		if query.class == String
 			query = [query]
 		elsif query.class == Array
@@ -147,12 +154,57 @@ class Cites
         return coll
 	end
 
-	# def self.getcit(input)
-	# 	cc = []
-	# 	input.each do |iter|
-	# 		cc << iter['doi']
-	# 	end
-	# 	out = Cites.doi2cit(cc)
-	# 	return out
-	# end
+	##
+	# search: Search for scholary objects in CrossRef
+	#
+	# Args: 
+	# * query: A free form string of terms.
+	#
+	# Examples:
+	#     require 'cites'
+	#     Cites.search(query='renear')
+	#     Cites.search('palmer')
+	# 	  Cites.search(['ecology', 'microbiology'])
+	# 	  out = Cites.search(['renear', 'science', 'smith birds'])
+	# 	  out.map {|i| i['doi']}
+	#     
+	#     # Feed into the doi2cit method
+	#     out = Cites.search('palmer')
+	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
+	#     Cites.show(g)
+	def self.search(query, doi = nil, page = nil, rows = nil, sort = nil, year = nil)
+		if query.class == String
+			nil
+		elsif query.class == Array
+			query = query.join('+')
+		else
+			fail 'query must be one of String or Array class'
+		end
+
+		url = "http://search.labs.crossref.org/dois"
+		
+		if doi == nil
+	        args = {"q" => query, "page" => page, "rows" => rows,
+            	"sort" => sort, "year" => year}
+            args = args.delete_if { |k, v| v.nil? }
+	        out = HTTParty.get(url, :body => args)
+	        	# :query => args
+	        	# )
+	        if out.code == 200
+				nil
+			else
+				puts "ERROR #{out.code}"
+			end
+	        
+	        wanted_keys = ["doi","normalizedScore","title","year"]
+	        coll = []
+			out.each do |item|
+				gg = item.reject { |key,_| !wanted_keys.include? key }
+				coll << gg
+			end
+		else
+			nil
+		end
+		return coll
+	end
 end

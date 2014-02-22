@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'bibtex-ruby', '~> 3.0'
   s.add_runtime_dependency 'httparty', '~> 0.12'
   s.add_runtime_dependency 'thor', '~> 0.18'
+  s.add_runtime_dependency 'json', '~> 1.8'
 end

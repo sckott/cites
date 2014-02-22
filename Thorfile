@@ -5,12 +5,24 @@ class Cite < Thor
   require 'cites'
   require 'launchy'
 
-  desc "search STRING", "Get a DOI from a search string"
+  desc "match STRING", "Look for matches in free form citations, get a match and DOI"
   # method_options :doi => :boolean
-  def search(tt)
+  def match(tt)
   	tt = "#{tt}"
     tt = tt.to_s.split(',')
-    out = Cites.search(tt)
+    out = Cites.match(tt)
+    puts out
+  end
+
+  desc "search STRING", "Search for articles via query string or DOI"
+  method_option :doi, :default => nil
+  method_option :page, :default => nil
+  method_option :rows, :default => nil
+  method_option :sort, :default => nil
+  method_option :year, :default => nil
+  def search(tt)
+    tt = "#{tt}"
+    out = Cites.search(tt, options[:doi], options[:page], options[:rows], options[:sort], options[:year])
     puts out
     # puts "#{tt}"
     # puts opts["doi"] ? out['doi'] : out
@@ -18,9 +30,9 @@ class Cite < Thor
   
   desc "get citation", "Get a citation from a DOI"
   # option :format => nil
-  method_option :format, :default => 'text'
-  method_option :style, :default => 'apa'
-  method_option :locale, :default => 'en-US'
+  method_option :format, :default => 'bibtex'
+  method_option :style, :default => nil
+  method_option :locale, :default => nil
   def get(tt)
   	tt = "#{tt}"
   	# puts tt.to_s
