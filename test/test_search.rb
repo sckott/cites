@@ -4,6 +4,10 @@ require "test/unit"
 class TestResponse < Test::Unit::TestCase
  
   def setup
+    # Mandatory keywords and values
+    @style = 'apa'
+    @locale = 'en-US'
+
     @search_text = 'Piwowar sharing data increases citation PLOS'
     @doi = '10.1371/journal.pone.0000308'
     @search_result = [{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", 
@@ -48,7 +52,13 @@ class TestResponse < Test::Unit::TestCase
   end
 
   def test_doi_search_json
-  	assert_equal(@doi_result, Cites.doi2cit(@doi, 'citeproc-json')[0])
+    format = 'citeproc-json'
+  	assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale,
+                 cache=true)[0])
+    assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache=false)[0])
+    assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache='flush')[0])
   end
  
 end
