@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'doiref'
-
-# if ARGV[1].length == 0
-	
-# end
-
-puts DOIref.doi2cit(doi=ARGV[0].to_s, format=ARGV[1].to_s, style=ARGV[2].to_s, locale=ARGV[3].to_s)
