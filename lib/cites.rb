@@ -140,20 +140,17 @@ class Cites
 
 		cc = []
 		doi.each do |iter|
-<<<<<<< HEAD
-			if iter.include?('http://')
-				iter = iter.sub('http://dx.doi.org/', '')
-			else
-				nil
-			end
-			cc << Cites.getcite(doi=iter, format=format, style=style, locale=locale)
-=======
+			# if iter.include?('http://')
+			# 	iter = iter.sub('http://dx.doi.org/', '')
+			# else
+			# 	nil
+			# end
+			# cc << Cites.getcite(doi=iter, format=format, style=style, locale=locale)
 			content = Cites.getcite(iter, format, style, locale, cache)
 			if format == 'citeproc-json'
 				content = JSON.parse(content)
 			end
 			cc << content
->>>>>>> 44e9e8e1d51e09b6e3062776f14126c49dae6210
 		end
 
 		return cc
