@@ -19,6 +19,11 @@ Each of the two above tasks are functions that you can use within Ruby, and are 
 * `json` gem to convert to/from JSON
 * `thor` gem to do `cites` stuff on the command line
 
+## Contributors
+
+* Scott Chamberlain
+* Joona Lehtomäki
+
 ## Quickstart
 
 ### Install 
