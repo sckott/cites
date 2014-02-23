@@ -12,13 +12,13 @@ def response_ok(code)
 	  when 200
 	    return true
 	  when 204
-	  	raise "The request was OK but there was no metadata available"
+	  	raise "The request was OK but there was no metadata available (response code: #{code})"
 	  when 404
-	    raise "The DOI requested doesn't exist"
+	    raise "The DOI requested doesn't exist (response code: #{code})"
 	  when 406
-	  	raise "Can't serve any requested content type"
+	  	raise "Can't serve any requested content type (response code: #{code})"
 	  when 500...600
-	    raise "ZOMG ERROR #{response.code}"
+	    raise "ZOMG ERROR #{code}"
   	end
 end
 
@@ -52,7 +52,7 @@ class Cites
 		}
 		formatuse = formats[format]
 		if format == 'text'
-			type = formatuse + "; style = " + style + "; locale = " + locale
+			type = "#{formatuse}; style=#{style}; locale=#{locale}"
 		else
 			type = formatuse
 		end
@@ -76,10 +76,16 @@ class Cites
 			   
 			    # If response code is ok (200) get response body and return
 			    # that from this block. Otherwise an error will be raised.
-			    if response_ok(response.code)
-			    	content = response.body
-			    end
-				content
+			   	begin
+				    if response_ok(response.code)
+				    	content = response.body
+				    end
+					content
+				rescue Exception => e
+					puts e.message
+					puts "Format requested: #{formatuse}"
+					exit
+				end
 			end
 		elsif cache == false
 			puts "Not using cache, requesting..."

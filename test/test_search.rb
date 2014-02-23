@@ -12,7 +12,11 @@ class TestResponse < Test::Unit::TestCase
     @doi = '10.1371/journal.pone.0000308'
     @search_result = [{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", 
     				   "text"=>"Piwowar sharing data increases citation PLOS"}]
-    @doi_result = {"subtitle" => [],
+    @doi_result_text = "Piwowar, H. A., Day, R. S., & Fridsma, D. B. (2007). " \
+                       "Sharing Detailed Research Data Is Associated with " \
+                       "Increased Citation Rate. PLoS ONE, 2(3), e308. " \
+                       "doi:10.1371/journal.pone.0000308\n"
+    @doi_result_json = {"subtitle" => [],
                    "subject" =>
                           ["Agricultural and Biological Sciences(all)",
                        "Medicine(all)",
@@ -51,13 +55,23 @@ class TestResponse < Test::Unit::TestCase
     assert_equal(@search_result, Cites.search(@search_text))
   end
 
+  def test_doi_search_text
+    format = 'text'
+    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale,
+                 cache=false)[0])
+    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache=true)[0])
+    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache='flush')[0])
+  end
+
   def test_doi_search_json
     format = 'citeproc-json'
-  	assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale,
-                 cache=true)[0])
-    assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale, 
+  	assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale,
                  cache=false)[0])
-    assert_equal(@doi_result, Cites.doi2cit(@doi, format, @style, @locale, 
+    assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache=true)[0])
+    assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale, 
                  cache='flush')[0])
   end
  
