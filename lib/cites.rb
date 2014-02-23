@@ -44,13 +44,13 @@ class Cites
 	def self.getcite(doi, format='text', style='apa', locale='en-US', 
 					 cache=true)
 		formats = {"rdf-xml" => "application/rdf+xml",
-			"turtle" => "text/turtle",
-			"citeproc-json" => "application/vnd.citationstyles.csl+json",
-			"text" => "text/x-bibliography",
-			"ris" => "application/x-rematch-info-systems",
-			"bibtex" => "application/x-bibtex",
-			"crossref-xml" => "application/vnd.crossref.unixref+xml",
-			"datacite-xml" => "application/vnd.datacite.datacite+xml"
+				   "turtle" => "text/turtle",
+				   "citeproc-json" => "application/vnd.citationstyles.csl+json",
+				   "text" => "text/x-bibliography",
+				   "ris" => "application/x-research-info-systems",
+			       "bibtex" => "application/x-bibtex",
+				   "crossref-xml" => "application/vnd.crossref.unixref+xml",
+				   "datacite-xml" => "application/vnd.datacite.datacite+xml"
 		}
 		formatuse = formats[format]
 		if format == 'text'
