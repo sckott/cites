@@ -235,7 +235,14 @@ class Cites
 	# search: Search for scholary objects in CrossRef
 	#
 	# Args: 
-	# * query: A free form string of terms.
+	# * query: A single or many terms (in an array). This function performs 
+	#          a single search if multiple terms are supplied. If this is 
+	#          supplied, the doi arg is ignored. 
+	# * doi: A DOI to search for. If this is supplied, query is ignored.
+	# * page: Page number to return.
+	# * rows: Number of records to return
+	# * sort: Sort (logical)
+	# * year: Year to restrict search to.
 	#
 	# Examples:
 	#     require 'cites'
@@ -249,7 +256,15 @@ class Cites
 	#     out = Cites.search('palmer')
 	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
 	#     Cites.show(g)
-	def self.search(query, doi = nil, page = nil, rows = nil, sort = nil, year = nil)
+	def self.search(options = {})
+		defaults = {:query => 'ecology', :doi => nil, :page => nil, :rows => 10, 
+			:sort => nil, :year => nil, :header => true, 
+			:fields => ["doi","normalizedScore","title","year"]}
+		options = defaults.merge(options)
+		query = options[:query]
+		fields = options[:fields]
+		options.delete(:fields)
+
 		if query.class == String
 			nil
 		elsif query.class == Array
@@ -260,25 +275,31 @@ class Cites
 
 		url = "http://search.labs.crossref.org/dois"
 		
-		if doi == nil
-	        args = {"q" => query, "page" => page, "rows" => rows,
-            	"sort" => sort, "year" => year}
-            args = args.delete_if { |k, v| v.nil? }
-	        out = HTTParty.get(url, :body => args)
-	        	# :query => args
-	        	# )
+		if options[:doi] == nil
+	        args = {"q" => query, "page" => options[:page], "rows" => options[:rows],
+	        	"sort" => options[:sort], "year" => options[:year], "header" => options[:header]}
+	        args = args.delete_if { |k, v| v.nil? }
+	        out = HTTParty.get(url, :query => args)
 	        if out.code == 200
 				nil
 			else
 				puts "ERROR #{out.code}"
 			end
-	        
-	        wanted_keys = ["doi","normalizedScore","title","year"]
+
+			items = out['items']
 	        coll = []
-			out.each do |item|
-				gg = item.reject { |key,_| !wanted_keys.include? key }
+			items.each do |item|
+				gg = item.reject { |key,_| !fields.include? key }
 				coll << gg
 			end
+			
+			if options[:header] == true
+				out = out.to_hash
+	        	meta = out.except('items')
+	        	coll = {'meta' => meta, 'items' => coll}
+	        else
+	        	nil
+	        end
 		else
 			nil
 		end
@@ -303,6 +324,12 @@ class Cites
 	#     out = Cites.search('palmer')
 	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
 	#     Cites.show(g)	
+end
+
+class Hash
+	def except(which)
+		self.tap{ |h| h.delete(which) }
+	end
 end
 
 # [fixme] - Setting the cache_location should really be handled by a method
