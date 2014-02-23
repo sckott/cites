@@ -1,9 +1,15 @@
 require "./lib/cites"
+require 'fileutils'
 require "test/unit"
  
 class TestResponse < Test::Unit::TestCase
  
   def setup
+    # Set up a separate cache to that actually used by cites
+    @original_cache = Cites::cache_location
+    @test_cache = File.join(File.dirname(@original_cache), "test_cache")
+    APICache.store = Moneta.new(:File, dir: @test_cache)
+
     # Mandatory keywords and values
     @style = 'apa'
     @locale = 'en-US'
@@ -45,10 +51,25 @@ class TestResponse < Test::Unit::TestCase
                        "indexed" => {"date-parts" => [[2013, 11, 7]], 
                                      "timestamp" => 1383784241835},
                        "volume" => "2"}
+    @doi_result_bibtex = "@article{Piwowar_Day_Fridsma_2007,\n  " \
+                         "title = {Sharing Detailed Research Data Is "\
+                         "Associated with Increased Citation Rate},\n  "\
+                         "volume = {2},\n  issn = {1932-6203},\n  "\
+                         "url = {http://dx.doi.org/10.1371/journal.pone.0000308},\n  "\
+                         "doi = {10.1371/journal.pone.0000308},\n  "\
+                         "number = {3},\n  journal = {PLoS ONE},\n  "\
+                         "publisher = {Public Library of Science (PLoS)},\n  "\
+                         "author = {Piwowar, Heather A. and Day, Roger S. and "\
+                         "Fridsma, Douglas B.},\n  editor = {Ioannidis, "\
+                         "JohnEditor},\n  year = {2007},\n  month = {mar},\n  "\
+                         "pages = {e308}\n}\n"
   end
   
   def teardown
-    ## Nothing really
+    # Remove the test cache and set the cache back to the origianl location
+    # just in case
+    FileUtils.rm_rf @test_cache
+    APICache.store = Moneta.new(:File, dir: @original_cache)
   end
  
   def test_links_endpoint
@@ -57,22 +78,30 @@ class TestResponse < Test::Unit::TestCase
 
   def test_doi_search_text
     format = 'text'
-    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale,
-                 cache=false)[0])
-    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale, 
-                 cache=true)[0])
-    assert_equal(@doi_result_text, Cites.doi2cit(@doi, format, @style, @locale, 
-                 cache='flush')[0])
+    doi_search(@doi_result_text, format)
   end
 
   def test_doi_search_json
     format = 'citeproc-json'
-  	assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale,
-                 cache=false)[0])
-    assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale, 
-                 cache=true)[0])
-    assert_equal(@doi_result_json, Cites.doi2cit(@doi, format, @style, @locale, 
-                 cache='flush')[0])
+  	doi_search(@doi_result_json, format)
+  end
+
+  def test_doi_search_bibtex
+    format = 'bibtex'
+    doi_search(@doi_result_bibtex, format)
   end
  
+  def doi_search(correct_response, format)
+    # Since we're using a test cache, it won't have any entries
+    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache=true)[0])
+    # Test again with cache, this time the entry should be in the cache
+    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache=true)[0])
+    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale,
+                 cache=false)[0])
+    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale, 
+                 cache='flush')[0])
+  end
+
 end
