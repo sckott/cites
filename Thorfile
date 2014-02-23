@@ -48,7 +48,13 @@ class Cite < Thor
     end
     
     puts "Found #{out.length} " + (out.length > 1 ? "matches" : "match")
-    pp out
+    for entry in out
+      if ['citeproc-json'].include? options['format']
+        pp entry
+      else
+        puts entry
+      end
+    end
 
   end
 

@@ -1,10 +1,9 @@
 require 'api_cache'
 require 'bibtex'
+require 'digest/sha1'
 require 'httparty'
 require 'json'
 require 'moneta'
-
-APICache.store = Moneta.new(:File, dir: 'cache')
 
 def response_ok(code)
 	# See CrossCite documentation http://crosscite.org/cn/
@@ -12,19 +11,22 @@ def response_ok(code)
 	  when 200
 	    return true
 	  when 204
-	  	raise "The request was OK but there was no metadata available"
+	  	raise "The request was OK but there was no metadata available (response code: #{code})"
 	  when 404
-	    raise "The DOI requested doesn't exist"
+	    raise "The DOI requested doesn't exist (response code: #{code})"
 	  when 406
-	  	raise "Can't serve any requested content type"
+	  	raise "Can't serve any requested content type (response code: #{code})"
 	  when 500...600
-	    raise "ZOMG ERROR #{response.code}"
+	    raise "ZOMG ERROR #{code}"
   	end
 end
 
 # Cites: The single class (for now) in cites
 
 class Cites
+
+	class << self; attr_accessor :cache_location end
+  	@cache_location =  ENV['HOME'] + '/.cites/cache'
 
  	##
 	# Get a single citation in various formats from a DOI
@@ -42,17 +44,17 @@ class Cites
 	def self.getcite(doi, format='text', style='apa', locale='en-US', 
 					 cache=true)
 		formats = {"rdf-xml" => "application/rdf+xml",
-			"turtle" => "text/turtle",
-			"citeproc-json" => "application/vnd.citationstyles.csl+json",
-			"text" => "text/x-bibliography",
-			"ris" => "application/x-rematch-info-systems",
-			"bibtex" => "application/x-bibtex",
-			"crossref-xml" => "application/vnd.crossref.unixref+xml",
-			"datacite-xml" => "application/vnd.datacite.datacite+xml"
+				   "turtle" => "text/turtle",
+				   "citeproc-json" => "application/vnd.citationstyles.csl+json",
+				   "text" => "text/x-bibliography",
+				   "ris" => "application/x-research-info-systems",
+			       "bibtex" => "application/x-bibtex",
+				   "crossref-xml" => "application/vnd.crossref.unixref+xml",
+				   "datacite-xml" => "application/vnd.datacite.datacite+xml"
 		}
 		formatuse = formats[format]
 		if format == 'text'
-			type = formatuse + "; style = " + style + "; locale = " + locale
+			type = "#{formatuse}; style=#{style}; locale=#{locale}"
 		else
 			type = formatuse
 		end
@@ -68,7 +70,12 @@ class Cites
 			end
 			# Keep cache data valid forever
 			# [todo] - should using cache be reported?
-			content = APICache.get(doi, :cache => cache_time, 
+
+			# Create a cache key based on the DOI requested + the type on
+			# content
+			cache_key = Digest::SHA1.hexdigest("#{doi}-#{type}")
+
+			content = APICache.get(cache_key, :cache => cache_time, 
 								   :valid => :forever, :period => 0,
 								   :timeout => 30) do
 			    puts msg
@@ -76,10 +83,16 @@ class Cites
 			   
 			    # If response code is ok (200) get response body and return
 			    # that from this block. Otherwise an error will be raised.
-			    if response_ok(response.code)
-			    	content = response.body
-			    end
-				content
+			   	begin
+				    if response_ok(response.code)
+				    	content = response.body
+				    end
+					content
+				rescue Exception => e
+					puts e.message
+					puts "Format requested: #{formatuse}"
+					exit
+				end
 			end
 		elsif cache == false
 			puts "Not using cache, requesting..."
@@ -93,7 +106,7 @@ class Cites
 		end
 		# response = HTTParty.get(doi, :headers => {"Accept" => type})
 		if format == 'bibtex'
-			output = BibTeX.parse(content)
+			output = BibTeX.parse(content).to_s
 		else
 			output = content
 		end
@@ -271,4 +284,30 @@ class Cites
 		end
 		return coll
 	end
+	
+	##
+	# setcache: Search for scholary objects in CrossRef
+	#
+	# Args: 
+	# * query: A free form string of terms.
+	#
+	# Examples:
+	#     require 'cites'
+	#     Cites.search(query='renear')
+	#     Cites.search('palmer')
+	# 	  Cites.search(['ecology', 'microbiology'])
+	# 	  out = Cites.search(['renear', 'science', 'smith birds'])
+	# 	  out.map {|i| i['doi']}
+	#     
+	#     # Feed into the doi2cit method
+	#     out = Cites.search('palmer')
+	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
+	#     Cites.show(g)	
 end
+
+# [fixme] - Setting the cache_location should really be handled by a method
+# but since all the methods in class Cites are static setting the cache
+# has to done manually in each static method (because we don't know which
+# is called first) or then we would need a propers initializer.
+
+APICache.store = Moneta.new(:File, dir: Cites::cache_location)
