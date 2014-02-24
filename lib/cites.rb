@@ -251,6 +251,9 @@ class Cites
 	# 	  Cites.search(['ecology', 'microbiology'])
 	# 	  out = Cites.search(['renear', 'science', 'smith birds'])
 	# 	  out.map {|i| i['doi']}
+	# 	  
+	# 	  Cites.search('science', :rows => 5)
+	# 	  
 	#     
 	#     # Feed into the doi2cit method
 	#     out = Cites.search('palmer')
@@ -260,6 +263,9 @@ class Cites
 		defaults = {:query => 'ecology', :doi => nil, :page => nil, :rows => 10, 
 			:sort => nil, :year => nil, :header => true, 
 			:fields => ["doi","normalizedScore","title","year"]}
+		# defaults = {"query" => 'ecology', "doi" => nil, "page" => nil, "rows" => 10, 
+		# 	"sort" => nil, "year" => nil, "header" => true, 
+		# 	"fields" => ["doi","normalizedScore","title","year"]}
 		options = defaults.merge(options)
 		query = options[:query]
 		fields = options[:fields]

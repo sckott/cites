@@ -146,7 +146,7 @@ thor cite:search 'ecology,birds' --rows=5
 From within Ruby
 
 ```ruby
-
+Cites.search('palmer')
 ```
 
 ```ruby
