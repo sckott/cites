@@ -259,15 +259,14 @@ class Cites
 	#     out = Cites.search('palmer')
 	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
 	#     Cites.show(g)
-	def self.search(options = {})
-		defaults = {:query => 'ecology', :doi => nil, :page => nil, :rows => 10, 
+	def self.search(query, options = {})
+		defaults = {:doi => nil, :page => nil, :rows => 10, 
 			:sort => nil, :year => nil, :header => true, 
 			:fields => ["doi","normalizedScore","title","year"]}
 		# defaults = {"query" => 'ecology', "doi" => nil, "page" => nil, "rows" => 10, 
 		# 	"sort" => nil, "year" => nil, "header" => true, 
 		# 	"fields" => ["doi","normalizedScore","title","year"]}
 		options = defaults.merge(options)
-		query = options[:query]
 		fields = options[:fields]
 		options.delete(:fields)
 
@@ -282,6 +281,7 @@ class Cites
 		url = "http://search.labs.crossref.org/dois"
 		
 		if options[:doi] == nil
+			# [fimxe] - looks like "rows" option isn't working like it's supposed to
 	        args = {"q" => query, "page" => options[:page], "rows" => options[:rows],
 	        	"sort" => options[:sort], "year" => options[:year], "header" => options[:header]}
 	        args = args.delete_if { |k, v| v.nil? }
