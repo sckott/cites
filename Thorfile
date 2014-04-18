@@ -24,8 +24,21 @@ class Cite < Thor
   method_option :year, :default => nil
   def search(tt)
     tt = "#{tt}"
-    out = Cites.search(tt, options[:doi], options[:page], options[:rows], options[:sort], options[:year])
-    puts out
+    puts "Searching with query \'#{tt}\'"
+    out = Cites.search(tt, options)
+    
+    # Don't use meta for anything for now
+    items = out["items"]
+    # Restrict output to number of rows fetched even if more was returned
+    rows = options['rows'].to_i - 1
+    for item in items[0..rows]
+      puts "\n"
+      puts "  Title: #{item['title']}"
+      puts "  Year: #{item['year']}"
+      puts "  Normalized score: #{item['normalizedScore']}"
+      puts "  DOI: #{item['doi']}"
+    end
+
     # puts "#{tt}"
     # puts opts["doi"] ? out['doi'] : out
   end
