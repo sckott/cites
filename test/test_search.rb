@@ -16,41 +16,95 @@ class TestResponse < Test::Unit::TestCase
 
     @search_text = 'Piwowar sharing data increases citation PLOS'
     @doi = '10.1371/journal.pone.0000308'
-    @search_result = [{"match"=>true, "doi"=>"10.1371/journal.pone.0000308", 
-    				   "text"=>"Piwowar sharing data increases citation PLOS"}]
+    
+    @search_result = {"meta"=>
+                      {"totalResults"=>872047,
+                       "startIndex"=>0,
+                       "itemsPerPage"=>10,
+                       "query"=>
+                        {"searchTerms"=>"Piwowar sharing data increases citation PLOS",
+                         "startPage"=>1}},
+                     "items"=>
+                      [{"doi"=>"http://dx.doi.org/10.1371/journal.pone.0000308",
+                        "normalizedScore"=>100,
+                        "title"=>
+                         "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                        "year"=>"2007"},
+                       {"doi"=>"http://dx.doi.org/10.1038/npre.2007.361.1",
+                        "normalizedScore"=>98,
+                        "title"=>
+                         "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                        "year"=>"2007"},
+                       {"doi"=>"http://dx.doi.org/10.1038/npre.2007.361",
+                        "normalizedScore"=>98,
+                        "title"=>
+                         "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                        "year"=>"2007"},
+                       {"doi"=>"http://dx.doi.org/10.1002/meet.14504701445",
+                        "normalizedScore"=>68,
+                        "title"=>
+                         "Evaluating data citation and sharing policies in the environmental sciences",
+                        "year"=>"2010"},
+                       {"doi"=>"http://dx.doi.org/10.1038/npre.2008.1701",
+                        "normalizedScore"=>56,
+                        "title"=>"Prevalence and Patterns of Microarray Data Sharing",
+                        "year"=>"2008"},
+                       {"doi"=>"http://dx.doi.org/10.1371/journal.pmed.0050183",
+                        "normalizedScore"=>54,
+                        "title"=>
+                         "Towards a Data Sharing Culture: Recommendations for Leadership from Academic Health Centers",
+                        "year"=>"2008"},
+                       {"doi"=>"http://dx.doi.org/10.7717/peerj.175",
+                        "normalizedScore"=>52,
+                        "title"=>"Data reuse and the open data citation advantage",
+                        "year"=>"2013"},
+                       {"doi"=>"http://dx.doi.org/10.1038/npre.2008.1701.1",
+                        "normalizedScore"=>52,
+                        "title"=>"Prevalence and Patterns of Microarray Data Sharing",
+                        "year"=>"2008"},
+                       {"doi"=>"http://dx.doi.org/10.1371/journal.pone.0018657",
+                        "normalizedScore"=>43,
+                        "title"=>
+                         "Who Shares? Who Doesn't? Factors Associated with Openly Archiving Raw Research Data",
+                        "year"=>"2011"},
+                       {"doi"=>"http://dx.doi.org/10.1371/journal.pbio.0040176",
+                        "normalizedScore"=>43,
+                        "title"=>"Open Access Increases Citation Rate",
+                        "year"=>"2006"}]}
+    
     @doi_result_text = "Piwowar, H. A., Day, R. S., & Fridsma, D. B. (2007). " \
                        "Sharing Detailed Research Data Is Associated with " \
                        "Increased Citation Rate. PLoS ONE, 2(3), e308. " \
                        "doi:10.1371/journal.pone.0000308\n"
-    @doi_result_json = {"subtitle" => [],
-                   "subject" =>
+    
+    @doi_result_json = {"subtitle"=>[],
+                         "subject"=>
                           ["Agricultural and Biological Sciences(all)",
-                       "Medicine(all)",
-                       "Biochemistry, Genetics and Molecular Biology(all)"],
-                       "issued" => {"date-parts" => [[2007, 3, 21]]},
-                       "score" => 1.0,
-                       "author" =>
-                          [{"family" => "Piwowar", "given"=>"Heather A."},
-                           {"family" => "Day", "given"=>"Roger S."},
-                           {"family" => "Fridsma", "given"=>"Douglas B."}],
-                       "container-title" => ["PLoS ONE"],
-                       "page" => "e308",
-                       "deposited" => {"date-parts"=>[[2011, 7, 6]], 
-                                       "timestamp"=>1309910400000},
-                       "issue" => "3",
-                       "title" =>
-                          ["Sharing Detailed Research Data Is Associated with" + 
-                           " Increased Citation Rate"],
-                       "editor" => [{"family"=>"Ioannidis", "given"=>"John"}],
-                       "type" => "journal-article",
-                       "DOI" => "10.1371/journal.pone.0000308",
-                       "ISSN" => ["1932-6203"],
-                       "URL" => "http://dx.doi.org/10.1371/journal.pone.0000308",
-                       "source" => "CrossRef",
-                       "publisher" => "Public Library of Science (PLoS)",
-                       "indexed" => {"date-parts" => [[2013, 11, 7]], 
-                                     "timestamp" => 1383784241835},
-                       "volume" => "2"}
+                           "Medicine(all)",
+                           "Biochemistry, Genetics and Molecular Biology(all)"],
+                         "issued"=>{"date-parts"=>[[2007, 3, 21]]},
+                         "score"=>1.0,
+                         "prefix"=>"http://id.crossref.org/prefix/10.1371",
+                         "author"=>
+                          [{"family"=>"Piwowar", "given"=>"Heather A."},
+                           {"family"=>"Day", "given"=>"Roger S."},
+                           {"family"=>"Fridsma", "given"=>"Douglas B."}],
+                         "container-title"=>"PLoS ONE",
+                         "page"=>"e308",
+                         "deposited"=>{"date-parts"=>[[2014, 3, 6]], "timestamp"=>1394064000000},
+                         "issue"=>"3",
+                         "title"=>
+                          "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                         "editor"=>[{"family"=>"Ioannidis", "given"=>"John"}],
+                         "type"=>"journal-article",
+                         "DOI"=>"10.1371/journal.pone.0000308",
+                         "ISSN"=>["1932-6203"],
+                         "URL"=>"http://dx.doi.org/10.1371/journal.pone.0000308",
+                         "source"=>"CrossRef",
+                         "publisher"=>"Public Library of Science (PLoS)",
+                         "indexed"=>{"date-parts"=>[[2014, 3, 8]], "timestamp"=>1394237085568},
+                         "volume"=>"2"}
+    
     @doi_result_bibtex = "@article{Piwowar_2007,\n  " \
                          "title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},\n  "\
                          "volume = {2},\n  issn = {1932-6203},\n  "\
