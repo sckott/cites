@@ -21,9 +21,8 @@ def response_ok(code)
   	end
 end
 
-# Cites: The single class (for now) in cites
-
-class Cites
+# Citation: The single class (for now) in cites
+class Citation
 
 	class << self; attr_accessor :cache_location end
   	@cache_location =  ENV['HOME'] + '/.cites/cache'
@@ -343,4 +342,4 @@ end
 # has to done manually in each static method (because we don't know which
 # is called first) or then we would need a propers initializer.
 
-APICache.store = Moneta.new(:File, dir: Cites::cache_location)
+APICache.store = Moneta.new(:File, dir: Citation::cache_location)
