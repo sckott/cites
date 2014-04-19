@@ -7,6 +7,30 @@
 + `cites` gem development now uses [bundler](http://bundler.io/) for tracking and managing dependencies.
 + `cites` gem development now uses [rake](http://rake.rubyforge.org/) to manage different development tasks such as testing and building.
 + Old `Makefile` has been removed.
++ Installation instructions now look like this:
+
+    __Install__ 
+
+    Install bundler
+
+    ```
+    gem install bundler
+    ```
+
+    Get the sources
+
+    ```
+    git clone git@github.com:sckott/cites.git
+    cd cites
+    ```
+
+    Install dependencies using bundler
+
+    ```
+    bundle install
+    ```
+
+    Since `rake` is included in the dependencies, the build system should be available after the previous step. 
 
 #### CLI
 
