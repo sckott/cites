@@ -1,3 +1,5 @@
 *.gem
 cache/
 Gemfile.lock
+.ruby-version
+.ruby-gemset
