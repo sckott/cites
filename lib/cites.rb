@@ -21,11 +21,21 @@ def response_ok(code)
   	end
 end
 
-# Citation: The single class (for now) in cites
-class Citation
+module Cites
 
-	class << self; attr_accessor :cache_location end
-  	@cache_location =  ENV['HOME'] + '/.cites/cache'
+  	@@cache_location =  ENV['HOME'] + '/.cites/cache'
+
+  	def self.getcache()
+  		return @@cache_location
+  	end
+
+  	def self.setcache(directory)
+  		if File.directory?(directory)
+  			@@cache_location = directory
+  		else
+  			puts "Directory path #{directory} does not exist"
+  		end
+  	end
 
  	##
 	# Get a single citation in various formats from a DOI
@@ -342,4 +352,4 @@ end
 # has to done manually in each static method (because we don't know which
 # is called first) or then we would need a propers initializer.
 
-APICache.store = Moneta.new(:File, dir: Citation::cache_location)
+APICache.store = Moneta.new(:File, dir: Cites::getcache())
