@@ -1,4 +1,4 @@
-require "./lib/cites"
+require "cites"
 require 'fileutils'
 require "test/unit"
  
@@ -6,7 +6,7 @@ class TestResponse < Test::Unit::TestCase
  
   def setup
     # Set up a separate cache to that actually used by cites
-    @original_cache = Cites::cache_location
+    @original_cache = Cites::getcache()
     @test_cache = File.join(File.dirname(@original_cache), "test_cache")
     APICache.store = Moneta.new(:File, dir: @test_cache)
 
@@ -51,17 +51,16 @@ class TestResponse < Test::Unit::TestCase
                        "indexed" => {"date-parts" => [[2013, 11, 7]], 
                                      "timestamp" => 1383784241835},
                        "volume" => "2"}
-    @doi_result_bibtex = "@article{Piwowar_Day_Fridsma_2007,\n  " \
-                         "title = {Sharing Detailed Research Data Is "\
-                         "Associated with Increased Citation Rate},\n  "\
+    @doi_result_bibtex = "@article{Piwowar_2007,\n  " \
+                         "title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},\n  "\
                          "volume = {2},\n  issn = {1932-6203},\n  "\
                          "url = {http://dx.doi.org/10.1371/journal.pone.0000308},\n  "\
                          "doi = {10.1371/journal.pone.0000308},\n  "\
                          "number = {3},\n  journal = {PLoS ONE},\n  "\
                          "publisher = {Public Library of Science (PLoS)},\n  "\
-                         "author = {Piwowar, Heather A. and Day, Roger S. and "\
-                         "Fridsma, Douglas B.},\n  editor = {Ioannidis, "\
-                         "JohnEditor},\n  year = {2007},\n  month = {mar},\n  "\
+                         "author = {Piwowar, Heather A. and Day, Roger S. and Fridsma, Douglas B.},\n  "\
+                         "editor = {Ioannidis, JohnEditor},\n  "\
+                         "year = {2007},\n  month = {mar},\n  "\
                          "pages = {e308}\n}\n"
   end
   
