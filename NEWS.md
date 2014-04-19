@@ -9,18 +9,24 @@
 + Old `Makefile` has been removed.
 + Installation instructions now look like this:
 
-    __Install__ 
+    __Dependencies__ 
+
+    Install packages needed for development, e.g. on Ubuntu:
+    
+    ```
+    sudo apt-get install git ruby ruby-dev
+    ```
 
     Install bundler
 
     ```
-    gem install bundler
+    sudo gem install bundler
     ```
 
-    Get the sources
+    Get the sources for `cites`
 
     ```
-    git clone git@github.com:sckott/cites.git
+    git clone https://github.com/sckott/cites.git
     cd cites
     ```
 
@@ -29,11 +35,39 @@
     ```
     bundle install
     ```
+    
+    Note that on a multicore system you can also use > 1 cores with bundler, e.g.
+    
+    
+    ```
+    # Uses 4 cores
+    bundle install -j4
+    ```
+    
+    __Install system-wide using Rake__
 
-    Since `rake` is included in the dependencies, the build system should be available after the previous step. 
+    Since `rake` is included in the dependencies, the build system should be available after the previous step. To install `cites` system wide:
+    
+    ```
+    sudo rake install
+    ```
+    
+    Other tasks include e.g.
+    
+    ```
+    # Run tests
+    rake test
+    # Build the gem
+    rake build
+    # Create a tag on GitHub with the version of the gem, push the locally committed 
+    # files to the master on GitHub and publish the gem on RubyGems.org. 
+    # Remember, commit your changes, before run this task.
+    rake release
+    ```
 
-#### CLI
+#### Code architecture and CLI
 
++ `Cites` is no longer a class, but a module. In practice, very little has changed and most code work without changes. All methods in class `Cites` were bascially class methods and the class itself isn't being instantiated anywhere, so a module seems like a better fit. Modules can be seen as [especially suitable for libraries](https://stackoverflow.com/questions/151505/difference-between-a-class-and-a-module) which does suit `Cites`.
 + Old `Thorfile` has been removed. CLI is still based on [thor](http://whatisthor.com/), but the functionality has been incorporated into a command-line script called `cite`.
 + The way `Cites` functionality is called from command line has changed syntax from Thorfile-based to more common Unix CLI format. E.g. searching for a DOI has changed in a following way:
     
@@ -52,10 +86,6 @@
     # Now
     cite help get
     ```
-
-#### Code architecture
-
-
 
 ### Minor changes
 
