@@ -1,0 +1,40 @@
+PATH
+  remote: .
+  specs:
+    cites (0.1.0)
+      api_cache (~> 0.2)
+      bibtex-ruby (~> 3.0)
+      httparty (~> 0.12)
+      json (~> 1.8)
+      launchy (~> 2.4.2)
+      moneta (~> 0.7)
+      thor (~> 0.18)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.6)
+    api_cache (0.2.3)
+    bibtex-ruby (3.1.5)
+      latex-decode (~> 0.0)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
+    latex-decode (0.1.1)
+      unicode (~> 0.4)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    moneta (0.7.20)
+    multi_xml (0.5.5)
+    rake (10.3.1)
+    thor (0.19.1)
+    unicode (0.4.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.6)
+  cites!
+  rake

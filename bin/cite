@@ -1,5 +1,7 @@
-# module: citescli
+#!/usr/bin/env ruby
 
+require "thor"
+ 
 class Cite < Thor
   include Thor::Actions
   require 'cites'
@@ -83,3 +85,5 @@ class Cite < Thor
     end
   end
 end
+ 
+Cite.start(ARGV)
