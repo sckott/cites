@@ -1,11 +1,11 @@
-Sun, 20 Apr 2014 08:46:28 -0700
+Sun, 20 Apr 2014 08:54:16 -0700
 ./bin/cite	Sun, 20 Apr 2014 08:40:29 -0700
-./cites-0.1.0.gem	Sun, 20 Apr 2014 08:42:52 -0700
+./cites-0.1.1.gem	Sun, 20 Apr 2014 08:53:26 -0700
 ./cites.gemspec	Sun, 20 Apr 2014 08:40:29 -0700
 ./Gemfile	Sun, 20 Apr 2014 08:40:29 -0700
 ./Gemfile.lock	Sun, 20 Apr 2014 08:40:29 -0700
 ./ignore.rb	Sat, 22 Feb 2014 22:54:31 -0800
-./lib/cites/version.rb	Sun, 20 Apr 2014 08:40:29 -0700
+./lib/cites/version.rb	Sun, 20 Apr 2014 08:53:23 -0700
 ./lib/cites.rb	Sun, 20 Apr 2014 08:40:29 -0700
 ./NEWS.md	Sun, 20 Apr 2014 08:40:29 -0700
 ./pkg/cites-0.1.0.gem	Sun, 20 Apr 2014 08:41:07 -0700
