@@ -2,130 +2,98 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>class Cites - RDoc Documentation</title>
+<title>module Cites - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/cites.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">Object
-  
-</nav>
-
+    
     
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-c-doi2cit">::doi2cit</a>
     
+    <li ><a href="#method-c-getcache">::getcache</a>
+    
     <li ><a href="#method-c-getcite">::getcite</a>
     
+    <li ><a href="#method-c-match">::match</a>
+    
     <li ><a href="#method-c-search">::search</a>
+    
+    <li ><a href="#method-c-setcache">::setcache</a>
     
     <li ><a href="#method-c-show">::show</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Makefile.html">Makefile</a>
-  
-    <li class="file"><a href="./README_md.html">README</a>
-  
-    <li class="file"><a href="./Thorfile.html">Thorfile</a>
-  
-    <li class="file"><a href="./cites_gemspec.html">cites.gemspec</a>
-  
-    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Cites.html">Cites</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Cites</h1>
+<main role="main" aria-labelledby="module-Cites">
+  <h1 id="module-Cites" class="module">
+    module Cites
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-<p>Cites: The single class (for now) in cites</p>
-
-  </div><!-- description -->
+  </section>
 
   
   
@@ -136,20 +104,35 @@
     
 
     
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
 
     
 
-    <!-- Methods -->
     
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
     
       <div id="method-c-doi2cit" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">doi2cit</span><span
-            class="method-args">(doi, format='text', style='apa', locale='en-US')</span>
+            class="method-args">(doi, format='text', style='apa', locale='en-US', cache=true)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -158,7 +141,7 @@
 
         <div class="method-description">
           
-          <p>Get a citation in various foarmats from a DOI</p>
+          <p>Get a citation in various formats from a DOI</p>
 
 <p>Args:</p>
 <ul><li>
@@ -170,6 +153,15 @@ crossref-xml,</p>
 <p>style: Only used if format=&#39;text&#39;, e.g., apa, harvard3</p>
 </li><li>
 <p>locale: A locale, e.g., en-US</p>
+</li><li>
+<p>cache: Should cache be used</p>
+
+<pre>* true: Try fetcing from cache and store to cache (default)</pre>
+<ul><li>
+<p>false: Do use cache at all</p>
+</li><li>
+<p>&#39;flush&#39;: Get a fresh response and cache it</p>
+</li></ul>
 </li></ul>
 
 <p>Examples:</p>
@@ -184,13 +176,17 @@ crossref-xml,</p>
 <span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>([<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pbio.0030427&#39;</span>,<span class="ruby-string">&#39;10.1371/journal.pone.0084549&#39;</span>], <span class="ruby-string">&#39;bibtex&#39;</span>)
    <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">out</span>)
 </pre>
+
+<p>Returns an array of citation content. The structure of the content will 
+depend on the format requested.</p>
           
           
 
           
           <div class="method-source-code" id="doi2cit-source">
-            <pre><span class="ruby-comment"># File lib/cites.rb, line 60</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>)
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>, 
+                                 <span class="ruby-identifier">cache</span>=<span class="ruby-keyword">true</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">doi</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
                 <span class="ruby-identifier">doi</span> = [<span class="ruby-identifier">doi</span>]
         <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">doi</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
@@ -201,26 +197,36 @@ crossref-xml,</p>
 
         <span class="ruby-identifier">cc</span> = []
         <span class="ruby-identifier">doi</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">iter</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">cc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">iter</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">style</span>, <span class="ruby-identifier">locale</span>)
+                <span class="ruby-comment"># if iter.include?(&#39;http://&#39;)</span>
+                <span class="ruby-comment">#    iter = iter.sub(&#39;http://dx.doi.org/&#39;, &#39;&#39;)</span>
+                <span class="ruby-comment"># else</span>
+                <span class="ruby-comment">#    nil</span>
+                <span class="ruby-comment"># end</span>
+                <span class="ruby-comment"># cc &lt;&lt; Cites.getcite(doi=iter, format=format, style=style, locale=locale)</span>
+                <span class="ruby-identifier">content</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">iter</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">style</span>, <span class="ruby-identifier">locale</span>, <span class="ruby-identifier">cache</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;citeproc-json&#39;</span>
+                        <span class="ruby-identifier">content</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">content</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">cc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">content</span>
         <span class="ruby-keyword">end</span>
 
         <span class="ruby-keyword">return</span> <span class="ruby-identifier">cc</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- doi2cit-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- doi2cit-method -->
+      </div>
 
     
-      <div id="method-c-getcite" class="method-detail ">
+      <div id="method-c-getcache" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">getcite</span><span
-            class="method-args">(doi, format='text', style='apa', locale='en-US')</span>
+          <span class="method-name">getcache</span><span
+            class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -229,58 +235,153 @@ crossref-xml,</p>
 
         <div class="method-description">
           
-          <p>def initialize(doi, format=&#39;text&#39;, style=&#39;apa&#39;,
-locale=&#39;en-US&#39;)</p>
-
-<pre>@doi = doi
-@format = format
-@style = style
-@locale = locale
-end</pre>
+          
           
           
 
           
-          <div class="method-source-code" id="getcite-source">
-            <pre><span class="ruby-comment"># File lib/cites.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>)
-        <span class="ruby-identifier">formats</span> = {<span class="ruby-string">&quot;rdf-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/rdf+xml&quot;</span>,
-                <span class="ruby-string">&quot;turtle&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/turtle&quot;</span>,
-                <span class="ruby-string">&quot;citeproc-json&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.citationstyles.csl+json&quot;</span>,
-                <span class="ruby-string">&quot;text&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/x-bibliography&quot;</span>,
-                <span class="ruby-string">&quot;ris&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/x-research-info-systems&quot;</span>,
-                <span class="ruby-string">&quot;bibtex&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/x-bibtex&quot;</span>,
-                <span class="ruby-string">&quot;crossref-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.crossref.unixref+xml&quot;</span>,
-                <span class="ruby-string">&quot;datacite-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.datacite.datacite+xml&quot;</span>}
-        <span class="ruby-identifier">formatuse</span> = <span class="ruby-identifier">formats</span>[<span class="ruby-identifier">format</span>]
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;text&#39;</span>
-                <span class="ruby-identifier">type</span> = <span class="ruby-identifier">formatuse</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;; style = &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">style</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;; locale = &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">locale</span>
-        <span class="ruby-keyword">else</span>
-                <span class="ruby-identifier">type</span> = <span class="ruby-identifier">formatuse</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-identifier">out</span> = <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">&#39;http://dx.doi.org/&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">doi</span>, <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;Accept&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>})
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;bibtex&#39;</span>
-                <span class="ruby-identifier">output</span> = <span class="ruby-constant">BibTeX</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">out</span>.<span class="ruby-identifier">to_s</span>)
-        <span class="ruby-keyword">else</span>
-                <span class="ruby-identifier">output</span> = <span class="ruby-identifier">out</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword">end</span>
-        <span class="ruby-comment"># output.display</span>
-        <span class="ruby-keyword">return</span> <span class="ruby-identifier">output</span>
+          <div class="method-source-code" id="getcache-source">
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getcache</span>()
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">@@cache_location</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- getcite-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getcite-method -->
+      </div>
 
     
-      <div id="method-c-search" class="method-detail ">
+      <div id="method-c-getcite" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">search</span><span
+          <span class="method-name">getcite</span><span
+            class="method-args">(doi, format='text', style='apa', locale='en-US', cache=true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single citation in various formats from a DOI</p>
+
+<p>Args:</p>
+<ul><li>
+<p>doi: A DOI</p>
+</li><li>
+<p>format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex,
+crossref-xml,</p>
+</li><li>
+<p>style: Only used if format=&#39;text&#39;, e.g., apa, harvard3</p>
+</li><li>
+<p>locale: A locale, e.g., en-US</p>
+</li><li>
+<p>cache: Should cache be used</p>
+
+<pre>* true: Try fetcing from cache and store to cache (default)</pre>
+<ul><li>
+<p>false: Do use cache at all</p>
+</li><li>
+<p>&#39;flush&#39;: Get a fresh response and cache it</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getcite-source">
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getcite</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;text&#39;</span>, <span class="ruby-identifier">style</span>=<span class="ruby-string">&#39;apa&#39;</span>, <span class="ruby-identifier">locale</span>=<span class="ruby-string">&#39;en-US&#39;</span>, 
+                                 <span class="ruby-identifier">cache</span>=<span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">formats</span> = {<span class="ruby-string">&quot;rdf-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/rdf+xml&quot;</span>,
+                           <span class="ruby-string">&quot;turtle&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/turtle&quot;</span>,
+                           <span class="ruby-string">&quot;citeproc-json&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.citationstyles.csl+json&quot;</span>,
+                           <span class="ruby-string">&quot;text&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/x-bibliography&quot;</span>,
+                           <span class="ruby-string">&quot;ris&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/x-research-info-systems&quot;</span>,
+                       <span class="ruby-string">&quot;bibtex&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/x-bibtex&quot;</span>,
+                           <span class="ruby-string">&quot;crossref-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.crossref.unixref+xml&quot;</span>,
+                           <span class="ruby-string">&quot;datacite-xml&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;application/vnd.datacite.datacite+xml&quot;</span>
+        }
+        <span class="ruby-identifier">formatuse</span> = <span class="ruby-identifier">formats</span>[<span class="ruby-identifier">format</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;text&#39;</span>
+                <span class="ruby-identifier">type</span> = <span class="ruby-node">&quot;#{formatuse}; style=#{style}; locale=#{locale}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">type</span> = <span class="ruby-identifier">formatuse</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">doi</span> = <span class="ruby-string">&#39;http://dx.doi.org/&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">doi</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">cache</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">cache</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;flush&#39;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">cache</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+                        <span class="ruby-identifier">cache_time</span> = <span class="ruby-value">6000</span>
+                        <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;Requested DOI not in cache or is stale, requesting...&quot;</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">cache</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;flush&#39;</span>
+                        <span class="ruby-identifier">cache_time</span> = <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;Flushing cache, requesting...&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-comment"># Keep cache data valid forever</span>
+                <span class="ruby-comment"># [todo] - should using cache be reported?</span>
+
+                <span class="ruby-comment"># Create a cache key based on the DOI requested + the type on</span>
+                <span class="ruby-comment"># content</span>
+                <span class="ruby-identifier">cache_key</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA1</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-node">&quot;#{doi}-#{type}&quot;</span>)
+
+                <span class="ruby-identifier">content</span> = <span class="ruby-constant">APICache</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">cache_key</span>, <span class="ruby-value">:cache</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cache_time</span>, 
+                                                           <span class="ruby-value">:valid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:forever</span>, <span class="ruby-value">:period</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+                                                           <span class="ruby-value">:timeout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>) <span class="ruby-keyword">do</span>
+                    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+                    <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;Accept&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>})
+                   
+                    <span class="ruby-comment"># If response code is ok (200) get response body and return</span>
+                    <span class="ruby-comment"># that from this block. Otherwise an error will be raised.</span>
+                     <span class="ruby-keyword">begin</span>
+                            <span class="ruby-keyword">if</span> <span class="ruby-identifier">response_ok</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>)
+                                    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+                            <span class="ruby-keyword">end</span>
+                                <span class="ruby-identifier">content</span>
+                        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Format requested: #{formatuse}&quot;</span>
+                                <span class="ruby-identifier">exit</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">cache</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Not using cache, requesting...&quot;</span>
+                <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">doi</span>, <span class="ruby-value">:headers</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-string">&quot;Accept&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>})
+                
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">response_ok</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>)
+                    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Invalid cache value #{cache}&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># response = HTTParty.get(doi, :headers =&gt; {&quot;Accept&quot; =&gt; type})</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;bibtex&#39;</span>
+                <span class="ruby-identifier">output</span> = <span class="ruby-constant">BibTeX</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">content</span>).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">output</span> = <span class="ruby-identifier">content</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-comment"># output.display</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-match" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">match</span><span
             class="method-args">(query)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -290,7 +391,8 @@ end</pre>
 
         <div class="method-description">
           
-          <p>search: Search for an object (article, book, etc).</p>
+          <p>match: Look for matches to free-form citations to DOIs for an object
+(article, book, etc). in CrossRef</p>
 
 <p>Args:</p>
 <ul><li>
@@ -300,10 +402,10 @@ end</pre>
 <p>Examples:</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
-<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
-<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>)
-   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>, <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>])
-   <span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;piwowar sharing data increases citation PLOS&#39;</span>, 
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">match</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">match</span>(<span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>)
+   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">match</span>([<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>, <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>])
+   <span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">match</span>([<span class="ruby-string">&#39;piwowar sharing data increases citation PLOS&#39;</span>, 
                              <span class="ruby-string">&#39;boettiger Modeling stabilizing selection&#39;</span>,
                                  <span class="ruby-string">&#39;priem Using social media to explore scholarly impact&#39;</span>,
                                  <span class="ruby-string">&#39;fenner Peroxisome ligands for the treatment of breast cancer&#39;</span>])
@@ -316,9 +418,9 @@ end</pre>
           
 
           
-          <div class="method-source-code" id="search-source">
-            <pre><span class="ruby-comment"># File lib/cites.rb, line 102</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">query</span>)
+          <div class="method-source-code" id="match-source">
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">query</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
                 <span class="ruby-identifier">query</span> = [<span class="ruby-identifier">query</span>]
         <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
@@ -354,14 +456,168 @@ end</pre>
 <span class="ruby-comment"># coll.display</span>
 <span class="ruby-keyword">return</span> <span class="ruby-identifier">coll</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- search-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- search-method -->
+      </div>
+
+    
+      <div id="method-c-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(query, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>search: Search for scholary objects in CrossRef</p>
+
+<p>Args:</p>
+<ul><li>
+<p>query: A single or many terms (in an array). This function performs</p>
+
+<pre>a single search if multiple terms are supplied. If this is 
+supplied, the doi arg is ignored.</pre>
+</li><li>
+<p>doi: A DOI to search for. If this is supplied, query is ignored.</p>
+</li><li>
+<p>page: Page number to return.</p>
+</li><li>
+<p>rows: Number of records to return</p>
+</li><li>
+<p>sort: Sort (logical)</p>
+</li><li>
+<p>year: Year to restrict search to.</p>
+</li></ul>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">query</span>=<span class="ruby-string">&#39;renear&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;palmer&#39;</span>)
+   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;ecology&#39;</span>, <span class="ruby-string">&#39;microbiology&#39;</span>])
+   <span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>([<span class="ruby-string">&#39;renear&#39;</span>, <span class="ruby-string">&#39;science&#39;</span>, <span class="ruby-string">&#39;smith birds&#39;</span>])
+   <span class="ruby-identifier">out</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>[<span class="ruby-string">&#39;doi&#39;</span>]}
+
+   <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;science&#39;</span>, :<span class="ruby-identifier">rows</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>)
+
+<span class="ruby-comment"># Feed into the doi2cit method</span>
+<span class="ruby-identifier">out</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;palmer&#39;</span>)
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-identifier">out</span>[<span class="ruby-value">1</span>][<span class="ruby-string">&#39;doi&#39;</span>], <span class="ruby-identifier">format</span>=<span class="ruby-string">&#39;bibtex&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">g</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">query</span>, <span class="ruby-identifier">options</span> = {})
+        <span class="ruby-identifier">defaults</span> = {<span class="ruby-value">:doi</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:rows</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, 
+                <span class="ruby-value">:sort</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:year</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:header</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, 
+                <span class="ruby-value">:fields</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;doi&quot;</span>,<span class="ruby-string">&quot;normalizedScore&quot;</span>,<span class="ruby-string">&quot;title&quot;</span>,<span class="ruby-string">&quot;year&quot;</span>]}
+        <span class="ruby-comment"># defaults = {&quot;query&quot; =&gt; &#39;ecology&#39;, &quot;doi&quot; =&gt; nil, &quot;page&quot; =&gt; nil, &quot;rows&quot; =&gt; 10, </span>
+        <span class="ruby-comment">#     &quot;sort&quot; =&gt; nil, &quot;year&quot; =&gt; nil, &quot;header&quot; =&gt; true, </span>
+        <span class="ruby-comment">#     &quot;fields&quot; =&gt; [&quot;doi&quot;,&quot;normalizedScore&quot;,&quot;title&quot;,&quot;year&quot;]}</span>
+        <span class="ruby-identifier">options</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">fields</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:fields</span>]
+        <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:fields</span>)
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+                <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+                <span class="ruby-identifier">query</span> = <span class="ruby-identifier">query</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;+&#39;</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">fail</span> <span class="ruby-string">&#39;query must be one of String or Array class&#39;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">url</span> = <span class="ruby-string">&quot;http://search.labs.crossref.org/dois&quot;</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:doi</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+                <span class="ruby-comment"># [fimxe] - looks like &quot;rows&quot; option isn&#39;t working like it&#39;s supposed to</span>
+        <span class="ruby-identifier">args</span> = {<span class="ruby-string">&quot;q&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">query</span>, <span class="ruby-string">&quot;page&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:page</span>], <span class="ruby-string">&quot;rows&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:rows</span>],
+               <span class="ruby-string">&quot;sort&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sort</span>], <span class="ruby-string">&quot;year&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:year</span>], <span class="ruby-string">&quot;header&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:header</span>]}
+        <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> }
+        <span class="ruby-identifier">out</span> = <span class="ruby-constant">HTTParty</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">url</span>, <span class="ruby-value">:query</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">out</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
+                        <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;ERROR #{out.code}&quot;</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">items</span> = <span class="ruby-identifier">out</span>[<span class="ruby-string">&#39;items&#39;</span>]
+        <span class="ruby-identifier">coll</span> = []
+                <span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">gg</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">fields</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">key</span> }
+                        <span class="ruby-identifier">coll</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">gg</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:header</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+                        <span class="ruby-identifier">out</span> = <span class="ruby-identifier">out</span>.<span class="ruby-identifier">to_hash</span>
+               <span class="ruby-identifier">meta</span> = <span class="ruby-identifier">out</span>.<span class="ruby-identifier">except</span>(<span class="ruby-string">&#39;items&#39;</span>)
+               <span class="ruby-identifier">coll</span> = {<span class="ruby-string">&#39;meta&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">meta</span>, <span class="ruby-string">&#39;items&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">coll</span>}
+        <span class="ruby-keyword">else</span>
+               <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">coll</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-setcache" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setcache</span><span
+            class="method-args">(directory)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setcache-source">
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">setcache</span>(<span class="ruby-identifier">directory</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">directory</span>)
+                <span class="ruby-identifier">@@cache_location</span> = <span class="ruby-identifier">directory</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Directory path #{directory} does not exist&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
 
     
       <div id="method-c-show" class="method-detail ">
@@ -383,32 +639,31 @@ end</pre>
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File lib/cites.rb, line 77</span>
+            <pre><span class="ruby-comment"># File lib/cites.rb, line 181</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">show</span>(<span class="ruby-identifier">input</span>)
         <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">iter</span><span class="ruby-operator">|</span>
                 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">iter</span>.<span class="ruby-identifier">display</span>,<span class="ruby-string">&quot;\n&quot;</span>
         <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- show-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- show-method -->
+      </div>
 
     
-    </section><!-- public-class-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

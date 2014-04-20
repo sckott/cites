@@ -2,106 +2,110 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
 <title>README - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
 
 
-<body class="file">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-<div id="table-of-contents">
-  <nav class="section">
-    <h3 class="section-header">Table of Contents</h3>
-    <ul>
-      <li><a href="#label-cites">cites</a>
-      <li><a href="#label-What+it+is%3F">What it is?</a>
-      <li><a href="#label-Dependencies">Dependencies</a>
-      <li><a href="#label-Quickstart">Quickstart</a>
-      <li><a href="#label-Install">Install</a>
-      <li><a href="#label-Thor">Thor</a>
-      <li><a href="#label-Search+for+a+paper">Search for a paper</a>
-      <li><a href="#label-Get+a+reference+from+a+DOI">Get a reference from a DOI</a>
-      <li><a href="#label-Video">Video</a>
-      <li><a href="#label-To+do">To do</a>
-    </ul>
-  </nav>
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-cites">cites</a>
+    <li><a href="#label-What+it+is%3F">What it is?</a>
+    <li><a href="#label-Dependencies">Dependencies</a>
+    <li><a href="#label-Contributors">Contributors</a>
+    <li><a href="#label-Quickstart">Quickstart</a>
+    <li><a href="#label-Install">Install</a>
+    <li><a href="#label-Thor">Thor</a>
+    <li><a href="#label-Match+to+free+form+citations+for+a+paper">Match to free form citations for a paper</a>
+    <li><a href="#label-Metadata+search">Metadata search</a>
+    <li><a href="#label-Get+a+reference+from+a+DOI">Get a reference from a DOI</a>
+    <li><a href="#label-Open+paper+in+browser">Open paper in browser</a>
+    <li><a href="#label-Video">Video</a>
+    <li><a href="#label-To+do">To do</a>
+  </ul>
 </div>
 
 
   <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./Makefile.html">Makefile</a>
-  
-    <li class="file"><a href="./README_md.html">README</a>
-  
-    <li class="file"><a href="./Thorfile.html">Thorfile</a>
-  
-    <li class="file"><a href="./cites_gemspec.html">cites.gemspec</a>
-  
-    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
 
   <ul class="link-list">
   
-    <li><a href="./Cites.html">Cites</a>
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./NEWS_md.html">NEWS</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./cites_gemspec.html">cites.gemspec</a>
   
   </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation" class="description">
-  
+<main role="main" aria-label="Page README.md">
+
 <h1 id="label-cites">cites<span><a href="#label-cites">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p><strong>this is alpha software, so expect changes</strong></p>
 
-<h3 id="label-What+it+is%3F">What it is?<span><a href="#label-What+it+is%3F">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h2 id="label-What+it+is%3F">What it is?<span><a href="#label-What+it+is%3F">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p><strong>cites does two things:</strong></p>
 <ul><li>
@@ -119,24 +123,34 @@ spin up Ruby. This latter use case I think is really powerful. That is,
 during a typical writing workflow (in which you are using bibtex formatted
 references) one can want a citation for their paper, and instead of opening
 up a browser and using Google Scholar or Web of Science, etc., you can
-quickly search in your terminal by doing e.g., <code>crsearch &#39;keywords
-that will help find the paper, including author, year, etc.&#39;</code>.
-Which if matches will give you a DOI. Then you can do <code>cites
-DOI/string | pbcopy</code> and you get the bibtex reference in your
-clipboard. Then just paste into your bibtex file or references manager.</p>
+quickly search in your terminal by doing e.g., <code>thor cite:search
+&#39;keywords that will help find the paper, including author, year,
+etc.&#39;</code>. Which if matches will give you a DOI. Then you can do
+<code>thor cite:get DOI/string | pbcopy</code> and you get the bibtex
+reference in your clipboard. Then just paste into your bibtex file or
+references manager. See more examples below.</p>
 
-<h3 id="label-Dependencies">Dependencies<span><a href="#label-Dependencies">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h2 id="label-Dependencies">Dependencies<span><a href="#label-Dependencies">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <ul><li>
 <p><code>HTTParty</code> gem to make web calls to Crossref APIs</p>
 </li><li>
 <p><code>bibtex-ruby</code> gem to parse the bibtex</p>
 </li><li>
 <p><code>json</code> gem to convert to/from JSON</p>
+</li><li>
+<p><code>thor</code> gem to do <code>cites</code> stuff on the command line</p>
 </li></ul>
 
-<h3 id="label-Quickstart">Quickstart<span><a href="#label-Quickstart">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h2 id="label-Contributors">Contributors<span><a href="#label-Contributors">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+<ul><li>
+<p>Scott Chamberlain</p>
+</li><li>
+<p>Joona Lehtomäki</p>
+</li></ul>
 
-<h4 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h2 id="label-Quickstart">Quickstart<span><a href="#label-Quickstart">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<h3 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>Install dependencies</p>
 
@@ -151,7 +165,7 @@ make</pre>
 options into Thor so that you can do citation stuff from the cli or within
 Ruby.</p>
 
-<h4 id="label-Thor">Thor<span><a href="#label-Thor">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h3 id="label-Thor">Thor<span><a href="#label-Thor">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>I decided to use <a href="http://whatisthor.com/">Thor</a> to make
 functions within <code>cites</code> available on the cli. Thor is cool. For
@@ -161,9 +175,26 @@ example, you can list the commands available like</p>
 
 <pre>cites
 -----
-thor cites:getcite        # Get a citation from a DOI
-thor cites:launch paper   # Open a paper from a given DOI in your default browser
-thor cites:search STRING  # Get a DOI from a search string</pre>
+thor cite:get        # Get a citation from a DOI
+thor cite:launch paper   # Open a paper from a given DOI in your default browser
+thor cite:search STRING  # Get a DOI from a search string</pre>
+
+<p>Get help for a particular method</p>
+
+<pre>thor help cite:get</pre>
+
+<pre>Usage:
+  thor cite:get
+
+Options:
+  [--format=FORMAT]
+                     # Default: text
+  [--style=STYLE]
+                     # Default: apa
+  [--locale=LOCALE]
+                     # Default: en-US
+
+Get a citation from a DOI</pre>
 
 <p>This is what&#39;s associated with <code>cites</code> from the cli using
 Thor.</p>
@@ -171,33 +202,68 @@ Thor.</p>
 <p>Other commands are available, just type <code>thor</code> on the cli, and
 press enter.</p>
 
-<h4 id="label-Search+for+a+paper">Search for a paper<span><a href="#label-Search+for+a+paper">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h3 id="label-Match+to+free+form+citations+for+a+paper">Match to free form citations for a paper<span><a href="#label-Match+to+free+form+citations+for+a+paper">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>From the CLI</p>
 
-<pre>thor cites:search &#39;Piwowar sharing data increases citation PLOS&#39;</pre>
+<pre>thor cite:search &#39;Piwowar sharing data increases citation PLOS&#39;</pre>
 
 <pre class="ruby">{<span class="ruby-string">&quot;match&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;10.1371/journal.pone.0000308&quot;</span>, <span class="ruby-string">&quot;text&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Piwowar sharing data increases citation PLOS&quot;</span>}
 </pre>
 
 <p>And you can do many searches, separated with commas, like</p>
 
-<pre>thor cites:search &#39;Piwowar sharing data increases citation PLOS,boettiger Modeling stabilizing selection&#39;</pre>
+<pre>thor cite:search &#39;Piwowar sharing data increases citation PLOS,boettiger Modeling stabilizing selection&#39;</pre>
 
 <p>Search within Ruby</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
-<span class="ruby-identifier">cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;Piwowar sharing data increases citation PLOS&#39;</span>)
 </pre>
 
 <pre class="ruby">[{<span class="ruby-string">&quot;match&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;10.1371/journal.pone.0000308&quot;</span>, <span class="ruby-string">&quot;text&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Piwowar sharing data increases citation PLOS&quot;</span>}]=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
 </pre>
 
-<h4 id="label-Get+a+reference+from+a+DOI">Get a reference from a DOI<span><a href="#label-Get+a+reference+from+a+DOI">&para;</a> <a href="#documentation">&uarr;</a></span></h4>
+<h3 id="label-Metadata+search">Metadata search<span><a href="#label-Metadata+search">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>This is searching the metadata for articles, not matching citations as in
+the last example. This uses the CrossRef metadata search API, at the
+<code>/dois</code> endpoint documented here: <a
+href="http://search.crossref.org/help/api">search.crossref.org/help/api</a></p>
+
+<p>From the CLI</p>
+
+<pre>thor cite:search &#39;ecology&#39; --rows=5</pre>
+
+<pre class="ruby">{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.5402/ecology&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">100</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;ISRN Ecology&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1155/8641&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">100</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;ISRN Ecology&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.4996/fireecology&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">100</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Fire Ecology&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1111/(issn)1439-0485&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">88</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Marine Ecology&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1111/(issn)1365-2435&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">88</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Functional Ecology&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>}
+</pre>
+
+<pre>thor cite:search &#39;ecology,birds&#39; --rows=5</pre>
+
+<pre class="ruby">{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.2307/1935170&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">100</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Population Ecology if Migratory Birds (Symposium)&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;1974&quot;</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1016/b978-012517367-4.50007-3&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">98</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Raptors and other soaring birds&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;2007&quot;</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1016/b978-012517367-4.50029-2&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">98</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Glossary&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;2007&quot;</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1016/b978-012517367-4.50030-9&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">98</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;References&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;2007&quot;</span>}
+{<span class="ruby-string">&quot;doi&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://dx.doi.org/10.1016/b978-012675555-8/50008-7&quot;</span>, <span class="ruby-string">&quot;normalizedScore&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">98</span>, <span class="ruby-string">&quot;title&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;References&quot;</span>, <span class="ruby-string">&quot;year&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;2001&quot;</span>}
+</pre>
+
+<p>From within Ruby</p>
+
+<pre class="ruby"><span class="ruby-constant">Cites</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">&#39;palmer&#39;</span>)
+</pre>
+
+<pre class="ruby">
+</pre>
+
+<h3 id="label-Get+a+reference+from+a+DOI">Get a reference from a DOI<span><a href="#label-Get+a+reference+from+a+DOI">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
 
 <p>From the CLI, default output is text format, apa style, locale en-US</p>
 
-<pre>thor cites:getcite &#39;10.1186/1471-2105-14-16&#39;</pre>
+<pre>thor cite:get &#39;10.1186/1471-2105-14-16&#39;</pre>
 
 <pre>Boyle, B., Hopkins, N., Lu, Z., Raygoza Garay, J. A., Mozzherin, D., Rees, T., Matasci, N., et al. (2013). The taxonomic name resolution service: an online tool for automated standardization of plant names. BMC Bioinformatics, 14(1), 16. Springer (Biomed Central Ltd.). doi:10.1186/1471-2105-14-16</pre>
 
@@ -205,7 +271,7 @@ press enter.</p>
 pass in options to the call on the cli, like here choose <code>ris</code>
 for the format</p>
 
-<pre>thor cites:getcite &#39;10.1371/journal.pone.0000308&#39; --format=ris</pre>
+<pre>thor cite:get &#39;10.1371/journal.pone.0000308&#39; --format=ris</pre>
 
 <pre>TY  - JOUR
 T2  - PLoS ONE
@@ -224,7 +290,7 @@ ER  -</pre>
 
 <p>And here <code>bibtex</code> for the format</p>
 
-<pre>thor cites:getcite &#39;10.1371/journal.pone.0000308&#39; --format=bibtex</pre>
+<pre>thor cite:get &#39;10.1371/journal.pone.0000308&#39; --format=bibtex</pre>
 
 <pre>@article{Piwowar_Day_Fridsma_2007,
   title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},
@@ -244,14 +310,14 @@ ER  -</pre>
 <p>Two more options, <code>style</code> and <code>locale</code> are only
 available with text format, like</p>
 
-<pre>thor cites:getcite &#39;10.1371/journal.pone.0000308&#39; --format=text --style=mla --locale=fr-FR</pre>
+<pre>thor cite:get &#39;10.1371/journal.pone.0000308&#39; --format=text --style=mla --locale=fr-FR</pre>
 
 <pre>Piwowar, Heather A., Roger S. Day, et Douglas B. Fridsma. « Sharing Detailed Research Data Is Associated with Increased Citation Rate ». éd par. John Ioannidis. PLoS ONE 2.3 (2007): e308.</pre>
 
 <p>Within Ruby</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cites&#39;</span>
-<span class="ruby-identifier">cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>)
+<span class="ruby-constant">Cites</span>.<span class="ruby-identifier">doi2cit</span>(<span class="ruby-string">&#39;10.1371/journal.pone.0000308&#39;</span>)
 </pre>
 
 <pre class="ruby"><span class="ruby-ivar">@article</span>{<span class="ruby-constant">Piwowar_Day_Fridsma_2007</span>,
@@ -270,26 +336,51 @@ available with text format, like</p>
 }
 </pre>
 
-<h3 id="label-Video">Video<span><a href="#label-Video">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h3 id="label-Open+paper+in+browser">Open paper in browser<span><a href="#label-Open+paper+in+browser">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>Uses <a href="http://macrodocs.org/">Macrodocs</a>. The default, using
+Macrodocs, only works for open access (#OA) articles. You can set the
+option <code>oa</code> to be false.</p>
+
+<pre>thor cite:launch &#39;10.1371/journal.pone.0000308&#39;</pre>
+
+<pre># launches in your default browser with url http://macrodocs.org/?doi=10.1371/journal.pone.0000308</pre>
+
+<p>It&#39;s super simple, it just concatenates your DOI onto
+<code>http://macrodocs.org/?doi=</code> to give in this case <a
+href="http://macrodocs.org/?doi=10.1371/journal.pone.0000308">macrodocs.org/?doi=10.1371/journal.pone.0000308</a>
+for what you will get from that command.</p>
+
+<p>When you don&#39;t have an open access article, set the oa option flag to
+false, like <code>--oa=false</code></p>
+
+<pre>thor cite:launch &#39;10.1111/1365-2745.12157&#39; --oa=false</pre>
+
+<pre># launches in your default browser with url http://dx.doi.org/10.1371/journal.pone.0000308</pre>
+
+<p>Setting <code>--oa=false</code> simply concatenates your doi onto
+<code>http://dx.doi.org/</code>, which then attempts to resolve to likely
+the publishers page for the article.</p>
+
+<h2 id="label-Video">Video<span><a href="#label-Video">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p><strong>Asciicast video <a
-href="http://asciinema.org/a/7040">here</a></strong></p>
+href="http://asciinema.org/a/7261">here</a></strong></p>
 
-<h3 id="label-To+do">To do<span><a href="#label-To+do">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+<h2 id="label-To+do">To do<span><a href="#label-To+do">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <ul><li>
 <p>Add parameter for citation format, right now only gives back bibtex.
 Crossref API will give back many different formats though.</p>
 </li><li>
 <p>Add other Crossref metadata search functions.</p>
 </li></ul>
-
-</div>
-
+</main>
 
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
