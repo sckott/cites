@@ -87,3 +87,4 @@ class Cite < Thor
 end
  
 Cite.start(ARGV)
+
