@@ -26,7 +26,7 @@ class Cite < Thor
   method_option :year, :default => nil
   def search(tt)
     tt = "#{tt}"
-    puts "Searching with query \'#{tt}\'"
+    say "Searching with query \'#{tt}\'", :blue
     out = Cites.search(tt, options)
     
     # Don't use meta for anything for now
@@ -62,7 +62,7 @@ class Cite < Thor
       abort(e.message)
     end
     
-    puts "Found #{out.length} " + (out.length > 1 ? "matches" : "match")
+    say "Found #{out.length} " + (out.length > 1 ? "matches" : "match"), :green
     for entry in out
       if ['citeproc-json'].include? options['format']
         pp entry
@@ -87,3 +87,4 @@ class Cite < Thor
 end
  
 Cite.start(ARGV)
+

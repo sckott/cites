@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cites (0.1.0)
+    cites (0.1.2)
       api_cache (~> 0.2)
       bibtex-ruby (~> 3.0)
       httparty (~> 0.12)

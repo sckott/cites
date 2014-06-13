@@ -1,3 +1,10 @@
+## CHANGES IN VERSION 0.1.2 (2014-06-13)
+
+### Minor changes
+
++ Add CLI coloration using Thor
++ Installation instructions in the README updated to include installation from RubyGems
+
 ## CHANGES IN VERSION 0.1.0 (2014-04-19)
 
 ### Major changes

@@ -35,7 +35,17 @@ For changes see the [NEWS file](https://github.com/sckott/cites/blob/master/NEWS
 
 ## Quickstart
 
-### Install 
+### Install
+
+#### Release version
+
+Install latest release from from [RubyGems](https://rubygems.org/gems/cites)
+
+```
+gem install cites
+```
+
+#### Development version
 
 Install dependencies
 
@@ -43,7 +53,7 @@ Install dependencies
 gem install httparty bibtex-ruby launchy json rake api_cache moneta
 sudo gem install thor
 sudo gem install bundler
-git clone git@github.com:sckott/cites.git
+git clone https://github.com/sckott/cites.git
 cd cites
 bundle install
 ```
