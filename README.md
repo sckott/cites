@@ -53,7 +53,7 @@ Install dependencies
 gem install httparty bibtex-ruby launchy json rake api_cache moneta
 sudo gem install thor
 sudo gem install bundler
-git clone git@github.com:sckott/cites.git
+git clone https://github.com/sckott/cites.git
 cd cites
 bundle install
 ```
