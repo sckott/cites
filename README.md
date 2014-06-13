@@ -1,13 +1,15 @@
 cites
 ======
 
-**this is alpha software, so expect changes**
+[![Build Status](https://api.travis-ci.org/sckott/cites.png)](https://travis-ci.org/sckott/cites)
+
+This is alpha software, so expect changes
 
 ## What is it?  
 
-__`cites` has two main tasks:__ 
+__`cites` has two main tasks:__
 
-* Search for a paper. Uses the CrossRef Metadata Search API, which allows POST requests of free form text. 
+* Search for a paper. Uses the CrossRef Metadata Search API, which allows POST requests of free form text.
 * Get a citation from a DOI. Uses CrossRef [citation formatting service](http://labs.crossref.org/citation-formatting-service/) to search for citation information.
 
 Each of the two above tasks are functions that you can use within Ruby, and are available from the command line/terminal so that you don't have to spin up Ruby. This latter use case we think is really powerful. That is, during a typical writing workflow (in which you are using bibtex formatted references) one can want a citation for their paper, and instead of opening up a browser and using Google Scholar or Web of Science, etc., you can quickly search in your terminal by doing e.g., `cite search 'keywords that will help find the paper, including author, year, etc.'`. Which if matches will give you a DOI. Then you can do `thor cite get DOI | pbcopy` and you get the bibtex reference in your clipboard. Then just paste into your bibtex file or references manager. See more examples below.
@@ -31,7 +33,7 @@ Each of the two above tasks are functions that you can use within Ruby, and are 
 
 ## Changes
 
-For changes see the [NEWS file](https://github.com/sckott/cites/blob/master/NEWS.md). 
+For changes see the [NEWS file](https://github.com/sckott/cites/blob/master/NEWS.md).
 
 ## Quickstart
 
@@ -58,9 +60,9 @@ cd cites
 bundle install
 ```
 
-After `bundle install` the `cites` gem is installed and available on the command line or in a Ruby repl. 
+After `bundle install` the `cites` gem is installed and available on the command line or in a Ruby repl.
 
-### Command line 
+### Command line
 
 I decided to use [Thor](http://whatisthor.com/) to make functions within `cites` available on the cli. Thor is cool. For example, you can list the commands available like
 
@@ -102,7 +104,7 @@ Get a citation from a DOI
 
 This is what's associated with `cites` from the cli.
 
-Other commands are available, just type `cite` on the cli, and press enter. 
+Other commands are available, just type `cite` on the cli, and press enter.
 
 ### Match to free form citations for a paper
 
@@ -346,7 +348,7 @@ Cites.doi2cit('10.1371/journal.pone.0000308')
 
 ### Open paper in browser
 
-Uses [Macrodocs](http://macrodocs.org/). The default, using Macrodocs, only works for open access (#OA) articles. You can set the option `oa` to be false. 
+Uses [Macrodocs](http://macrodocs.org/). The default, using Macrodocs, only works for open access (#OA) articles. You can set the option `oa` to be false.
 
 ```
 cite launch '10.1371/journal.pone.0000308'
@@ -356,7 +358,7 @@ cite launch '10.1371/journal.pone.0000308'
 # launches in your default browser with url http://macrodocs.org/?doi=10.1371/journal.pone.0000308
 ```
 
-It's super simple, it just concatenates your DOI onto `http://macrodocs.org/?doi=` to give in this case [http://macrodocs.org/?doi=10.1371/journal.pone.0000308](http://macrodocs.org/?doi=10.1371/journal.pone.0000308) for what you will get from that command. 
+It's super simple, it just concatenates your DOI onto `http://macrodocs.org/?doi=` to give in this case [http://macrodocs.org/?doi=10.1371/journal.pone.0000308](http://macrodocs.org/?doi=10.1371/journal.pone.0000308) for what you will get from that command.
 
 When you don't have an open access article, set the oa option flag to false, like `--oa=false`
 
@@ -376,5 +378,5 @@ __Asciicast video [here](http://asciinema.org/a/7261)__
 
 ## To do
 
-* Add parameter for citation format, right now only gives back bibtex. Crossref API will give back many different formats though. 
-* Add other Crossref metadata search functions. 
+* Add parameter for citation format, right now only gives back bibtex. Crossref API will give back many different formats though.
+* Add other Crossref metadata search functions.
