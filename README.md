@@ -3,7 +3,7 @@ cites
 
 [![Build Status](https://api.travis-ci.org/sckott/cites.png)](https://travis-ci.org/sckott/cites)
 
-This is alpha software, so expect changes
+__This is alpha software, so expect changes__
 
 ## What is it?  
 
