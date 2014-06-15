@@ -41,7 +41,7 @@ For changes see the [NEWS file](https://github.com/sckott/cites/blob/master/NEWS
 
 #### Release version
 
-Install latest release from from [RubyGems](https://rubygems.org/gems/cites)
+Install latest release from [RubyGems](https://rubygems.org/gems/cites)
 
 ```
 gem install cites
