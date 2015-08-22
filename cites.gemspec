@@ -6,7 +6,7 @@ require 'cites/version'
 Gem::Specification.new do |s|
   s.name        = 'cites'
   s.version     = Cites::VERSION
-  s.date        = '2014-04-19'
+  s.date        = '2015-08-21'
   s.summary     = "Gets citations from DOIs"
   s.description = "Search for articles, and get citations from DOIs"
   s.authors     = ["Scott Chamberlain","Joona Lehtomäki"]
