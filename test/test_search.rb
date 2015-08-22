@@ -16,6 +16,7 @@ class TestResponse < Test::Unit::TestCase
 
     @search_text = 'Piwowar sharing data increases citation PLOS'
     @doi = '10.1371/journal.pone.0000308'
+    @doi2 = '10.2307/1936209'
 
     @search_result = {"meta"=>
                       {"totalResults"=>1063665,
@@ -109,29 +110,19 @@ class TestResponse < Test::Unit::TestCase
                           "Medicine(all)",
                           "Biochemistry, Genetics and Molecular Biology(all)"]}
 
-    @doi_result_bibtex = "@article{Piwowar_2007,\n  " \
-                         "doi = {10.1371/journal.pone.0000308},\n  "\
-                         "url = {http://dx.doi.org/10.1371/journal.pone.0000308},\n  "\
-                         "year = {2007},\n  "\
-                         "month = {mar},\n  "\
-                         "publisher = {Public Library of Science ({PLoS})},\n  "\
-                         "volume = {2},\n  "\
-                         "number = {3},\n  "\
-                         "pages = {e308},\n  "\
-                         "author = {Piwowar, Heather A. and Day, Roger S. and Fridsma, Douglas B.},\n  "\
-                         "editor = {Ioannidis, John},\n  "\
-                         "title = {Sharing Detailed Research Data Is Associated with Increased Citation Rate},\n  "\
-                         "journal = {{PLoS} {ONE}},\n  "\
-                         "month_numeric = {3}\n}\n"
-
-
-
-
-
-
-
-
-
+    @doi_result_bibtex = "@article{Davidson_1977,\n  "\
+                         "doi = {10.2307/1936209},\n  "\
+                         "url = {http://dx.doi.org/10.2307/1936209},\n  "\
+                         "year = {1977},\n  "\
+                         "month = jul,\n  "\
+                         "publisher = {{JSTOR}},\n  "\
+                         "volume = {58},\n  "\
+                         "number = {4},\n  "\
+                         "pages = {725},\n  "\
+                         "author = {Davidson, Diane W.},\n  "\
+                         "title = {Foraging Ecology and Community Organization in Desert Seed-Eating Ants},\n  "\
+                         "journal = {Ecology},\n  "\
+                         "month_numeric = {7}\n}\n"
 
   end
 
@@ -148,29 +139,29 @@ class TestResponse < Test::Unit::TestCase
 
   def test_doi_search_text
     format = 'text'
-    doi_search(@doi_result_text, format)
+    doi_search(@doi_result_text, format, @doi)
   end
 
   def test_doi_search_json
     format = 'citeproc-json'
-  	doi_search(@doi_result_json, format)
+  	doi_search(@doi_result_json, format, @doi)
   end
 
   def test_doi_search_bibtex
     format = 'bibtex'
-    doi_search(@doi_result_bibtex, format)
+    doi_search(@doi_result_bibtex, format, @doi2)
   end
 
-  def doi_search(correct_response, format)
+  def doi_search(correct_response, format, doi)
     # Since we're using a test cache, it won't have any entries
-    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale,
+    assert_equal(correct_response, Cites.doi2cit(doi, format, @style, @locale,
                  cache=true)[0])
     # Test again with cache, this time the entry should be in the cache
-    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale,
+    assert_equal(correct_response, Cites.doi2cit(doi, format, @style, @locale,
                  cache=true)[0])
-    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale,
+    assert_equal(correct_response, Cites.doi2cit(doi, format, @style, @locale,
                  cache=false)[0])
-    assert_equal(correct_response, Cites.doi2cit(@doi, format, @style, @locale,
+    assert_equal(correct_response, Cites.doi2cit(doi, format, @style, @locale,
                  cache='flush')[0])
   end
 
