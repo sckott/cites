@@ -18,7 +18,7 @@ class TestResponse < Test::Unit::TestCase
     @doi = '10.1371/journal.pone.0000308'
 
     @search_result = {"meta"=>
-                      {"totalResults"=>1042737,
+                      {"totalResults"=>1063665,
                        "startIndex"=>0,
                        "itemsPerPage"=>10,
                        "query"=>
@@ -31,12 +31,12 @@ class TestResponse < Test::Unit::TestCase
                          "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
                         "year"=>"2007"},
                        {"doi"=>"http://dx.doi.org/10.1038/npre.2007.361",
-                        "normalizedScore"=>96,
+                        "normalizedScore"=>97,
                         "title"=>
                          "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
                         "year"=>"2007"},
                        {"doi"=>"http://dx.doi.org/10.1038/npre.2007.361.1",
-                        "normalizedScore"=>96,
+                        "normalizedScore"=>97,
                         "title"=>
                          "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
                         "year"=>"2007"},
@@ -46,7 +46,7 @@ class TestResponse < Test::Unit::TestCase
                          "Evaluating data citation and sharing policies in the environmental sciences",
                         "year"=>"2010"},
                        {"doi"=>"http://dx.doi.org/10.1038/npre.2008.1701",
-                        "normalizedScore"=>55,
+                        "normalizedScore"=>56,
                         "title"=>"Prevalence and Patterns of Microarray Data Sharing",
                         "year"=>"2008"},
                        {"doi"=>"http://dx.doi.org/10.1371/journal.pmed.0050183",
@@ -54,55 +54,60 @@ class TestResponse < Test::Unit::TestCase
                         "title"=>
                          "Towards a Data Sharing Culture: Recommendations for Leadership from Academic Health Centers",
                         "year"=>"2008"},
-                       {"doi"=>"http://dx.doi.org/10.7717/peerj.175",
-                        "normalizedScore"=>51,
-                        "title"=>"Data reuse and the open data citation advantage",
-                        "year"=>"2013"},
                        {"doi"=>"http://dx.doi.org/10.1038/npre.2008.1701.1",
                         "normalizedScore"=>51,
                         "title"=>"Prevalence and Patterns of Microarray Data Sharing",
                         "year"=>"2008"},
-                       {"doi"=>"http://dx.doi.org/10.1371/journal.pbio.0040176",
-                        "normalizedScore"=>44,
-                        "title"=>"Open Access Increases Citation Rate",
-                        "year"=>"2006"},
+                       {"doi"=>"http://dx.doi.org/10.7717/peerj.175",
+                        "normalizedScore"=>51,
+                        "title"=>"Data reuse and the open data citation advantage",
+                        "year"=>"2013"},
                        {"doi"=>"http://dx.doi.org/10.1371/journal.pone.0018657",
                         "normalizedScore"=>44,
                         "title"=>
                          "Who Shares? Who Doesn't? Factors Associated with Openly Archiving Raw Research Data",
-                        "year"=>"2011"}]}
+                        "year"=>"2011"},
+                       {"doi"=>"http://dx.doi.org/10.1371/journal.pone.0128854",
+                        "normalizedScore"=>44,
+                        "title"=>
+                         "ONION: Functional Approach for Integration of Lipidomics and Transcriptomics Data",
+                        "year"=>"2015"}]}
 
     @doi_result_text = "Piwowar, H. A., Day, R. S., & Fridsma, D. B. (2007). " \
                        "Sharing Detailed Research Data Is Associated with " \
                        "Increased Citation Rate. PLoS ONE, 2(3), e308. " \
                        "doi:10.1371/journal.pone.0000308\n"
 
-    @doi_result_json = {"subtitle"=>[],
-                        "issued"=>{"date-parts"=>[[2007, 3, 21]]},
-                        "score"=>1.0,
-                        "prefix"=>"http://id.crossref.org/prefix/10.1371",
+    @doi_result_json = {"indexed"=>{"date-parts"=>[[2015, 6, 9]], "timestamp"=>1433824906840},
+                        "reference-count"=>0,
+                        "publisher"=>"Public Library of Science (PLoS)",
+                        "issue"=>"3",
+                        "DOI"=>"10.1371/journal.pone.0000308",
+                        "type"=>"journal-article",
+                        "page"=>"e308",
                         "update-policy"=>"http://dx.doi.org/10.1371/journal.pone.corrections_policy",
+                        "source"=>"CrossRef",
+                        "title"=>
+                         "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                        "prefix"=>"http://id.crossref.org/prefix/10.1371",
+                        "volume"=>"2",
                         "author"=>
                          [{"affiliation"=>[], "family"=>"Piwowar", "given"=>"Heather A."},
                           {"affiliation"=>[], "family"=>"Day", "given"=>"Roger S."},
                           {"affiliation"=>[], "family"=>"Fridsma", "given"=>"Douglas B."}],
+                        "member"=>"http://id.crossref.org/member/340",
                         "container-title"=>"PLoS ONE",
-                        "reference-count"=>0,
-                        "page"=>"e308",
                         "deposited"=>{"date-parts"=>[[2014, 3, 6]], "timestamp"=>1394064000000},
-                        "issue"=>"3",
-                        "title"=>
-                         "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+                        "score"=>1.0,
+                        "subtitle"=>[],
                         "editor"=>[{"affiliation"=>[], "family"=>"Ioannidis", "given"=>"John"}],
-                        "type"=>"journal-article",
-                        "DOI"=>"10.1371/journal.pone.0000308",
-                        "ISSN"=>["1932-6203"],
+                        "issued"=>{"date-parts"=>[[2007, 3, 21]]},
                         "URL"=>"http://dx.doi.org/10.1371/journal.pone.0000308",
-                        "source"=>"CrossRef",
-                        "publisher"=>"Public Library of Science (PLoS)",
-                        "indexed"=>{"date-parts"=>[[2014, 9, 21]], "timestamp"=>1411335127212},
-                        "volume"=>"2",
-                        "member"=>"http://id.crossref.org/member/340"}
+                        "ISSN"=>["1932-6203"],
+                        "subject"=>
+                         ["Agricultural and Biological Sciences(all)",
+                          "Medicine(all)",
+                          "Biochemistry, Genetics and Molecular Biology(all)"]}
 
     @doi_result_bibtex = "@article{Piwowar_2007,\n  " \
                          "doi = {10.1371/journal.pone.0000308},\n  "\
