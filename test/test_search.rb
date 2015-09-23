@@ -114,15 +114,14 @@ class TestResponse < Test::Unit::TestCase
                          "doi = {10.2307/1936209},\n  "\
                          "url = {http://dx.doi.org/10.2307/1936209},\n  "\
                          "year = {1977},\n  "\
-                         "month = jul,\n  "\
+                         "month = {jul},\n  "\
                          "publisher = {{JSTOR}},\n  "\
                          "volume = {58},\n  "\
                          "number = {4},\n  "\
                          "pages = {725},\n  "\
                          "author = {Davidson, Diane W.},\n  "\
                          "title = {Foraging Ecology and Community Organization in Desert Seed-Eating Ants},\n  "\
-                         "journal = {Ecology},\n  "\
-                         "month_numeric = {7}\n}\n"
+                         "journal = {Ecology}\n}\n"
 
   end
 
