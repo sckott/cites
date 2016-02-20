@@ -3,9 +3,11 @@ cites
 
 [![Build Status](https://api.travis-ci.org/sckott/cites.png)](https://travis-ci.org/sckott/cites)
 
-__This is alpha software, so expect changes__
+This has been surpassed by the Serrano client, a client for the newer Crossref search API. Check out [serrano](https://github.com/sckott/serrano).
 
-## What is it?  
+Leaving the readme content below just in case you want to see it:
+
+## What is it?
 
 __`cites` has two main tasks:__
 
