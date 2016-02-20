@@ -3,9 +3,17 @@ cites
 
 [![Build Status](https://api.travis-ci.org/sckott/cites.png)](https://travis-ci.org/sckott/cites)
 
+>>>>>>>>>>>>>>>>>>>>>>
+
 This has been surpassed by the Serrano client, a client for the newer Crossref search API. Check out [serrano](https://github.com/sckott/serrano).
 
 Leaving the readme content below just in case you want to see it:
+
+<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
 
 ## What is it?
 
