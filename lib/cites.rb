@@ -1,3 +1,4 @@
+require "cites/version"
 require 'api_cache'
 require 'bibtex'
 require 'digest/sha1'
@@ -40,9 +41,9 @@ module Cites
  	##
 	# Get a single citation in various formats from a DOI
 	#
-	# Args: 
+	# Args:
 	# * doi: A DOI
-	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml, 
+	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml,
 	# * style: Only used if format='text', e.g., apa, harvard3
 	# * locale: A locale, e.g., en-US
 	# * cache: Should cache be used
@@ -50,7 +51,7 @@ module Cites
 	#   * false: Do use cache at all
 	#   * 'flush': Get a fresh response and cache it
 	#
-	def self.getcite(doi, format='text', style='apa', locale='en-US', 
+	def self.getcite(doi, format='text', style='apa', locale='en-US',
 					 cache=true)
 		formats = {"rdf-xml" => "application/rdf+xml",
 				   "turtle" => "text/turtle",
@@ -84,12 +85,12 @@ module Cites
 			# content
 			cache_key = Digest::SHA1.hexdigest("#{doi}-#{type}")
 
-			content = APICache.get(cache_key, :cache => cache_time, 
+			content = APICache.get(cache_key, :cache => cache_time,
 								   :valid => :forever, :period => 0,
 								   :timeout => 30) do
 			    puts msg
 			    response = HTTParty.get(doi, :headers => {"Accept" => type})
-			   
+
 			    # If response code is ok (200) get response body and return
 			    # that from this block. Otherwise an error will be raised.
 			   	begin
@@ -106,7 +107,7 @@ module Cites
 		elsif cache == false
 			puts "Not using cache, requesting..."
 			response = HTTParty.get(doi, :headers => {"Accept" => type})
-			
+
 			if response_ok(response.code)
 			    content = response.body
 			end
@@ -126,16 +127,16 @@ module Cites
 	##
 	# Get a citation in various formats from a DOI
 	#
-	# Args: 
+	# Args:
 	# * doi: A DOI
-	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml, 
+	# * format: one of rdf-xml, turtle, citeproc-json, text, ris, bibtex, crossref-xml,
 	# * style: Only used if format='text', e.g., apa, harvard3
 	# * locale: A locale, e.g., en-US
 	# * cache: Should cache be used
 	# 	* true: Try fetcing from cache and store to cache (default)
 	#   * false: Do use cache at all
 	#   * 'flush': Get a fresh response and cache it
-	# 
+	#
 	# Examples:
 	#     require 'cites'
 	#     Cites.doi2cit('10.1371/journal.pone.0000308')
@@ -147,10 +148,10 @@ module Cites
 	#     out = Cites.doi2cit(['10.1371/journal.pone.0000308','10.1371/journal.pbio.0030427','10.1371/journal.pone.0084549'], 'bibtex')
 	# 	  Cites.show(out)
 	#
-	# Returns an array of citation content. The structure of the content will 
+	# Returns an array of citation content. The structure of the content will
 	# depend on the format requested.
 	#
-	def self.doi2cit(doi, format='text', style='apa', locale='en-US', 
+	def self.doi2cit(doi, format='text', style='apa', locale='en-US',
 					 cache=true)
 		if doi.class == String
 			doi = [doi]
@@ -158,7 +159,7 @@ module Cites
 			doi = doi
 		else
 			fail 'doi must be one of String or Array class'
-		end		
+		end
 
 		cc = []
 		doi.each do |iter|
@@ -187,7 +188,7 @@ module Cites
 	##
 	# match: Look for matches to free-form citations to DOIs for an object (article, book, etc). in CrossRef
 	#
-	# Args: 
+	# Args:
 	# * query: A free form string of terms.
 	#
 	# Examples:
@@ -195,12 +196,12 @@ module Cites
 	#     Cites.match('Piwowar sharing data increases citation PLOS')
 	#     Cites.match('boettiger Modeling stabilizing selection')
 	# 	  Cites.match(['Piwowar sharing data increases citation PLOS', 'boettiger Modeling stabilizing selection'])
-	# 	  out = Cites.match(['piwowar sharing data increases citation PLOS', 
+	# 	  out = Cites.match(['piwowar sharing data increases citation PLOS',
 	# 	  				'boettiger Modeling stabilizing selection',
 	# 					'priem Using social media to explore scholarly impact',
 	#					'fenner Peroxisome ligands for the treatment of breast cancer'])
 	# 	  out.map {|i| i['doi']}
-	#     
+	#
 	#     # Feed into the doi2cit method
 	#     Cites.doi2cit(out.map {|i| i['doi']})
 	def self.match(query)
@@ -212,9 +213,9 @@ module Cites
 			fail 'query must be one of String or Array class'
 		end
 		url = "http://search.labs.crossref.org/links"
-		out = 
-			HTTParty.post(url, 
-				:body => query.to_json, 
+		out =
+			HTTParty.post(url,
+				:body => query.to_json,
 				:headers => { "Content-Type" => "application/json"}
 			)
 		if out.code == 200
@@ -229,9 +230,9 @@ module Cites
 			if gg!=nil
 				gg = gg.sub('http://dx.doi.org/', '')
 			end
-			coll << 
+			coll <<
 			{
-				'match'=>item['match'], 
+				'match'=>item['match'],
 				'doi'=>gg,
 				'text'=>item['text']
 			}
@@ -243,10 +244,10 @@ module Cites
 	##
 	# search: Search for scholary objects in CrossRef
 	#
-	# Args: 
-	# * query: A single or many terms (in an array). This function performs 
-	#          a single search if multiple terms are supplied. If this is 
-	#          supplied, the doi arg is ignored. 
+	# Args:
+	# * query: A single or many terms (in an array). This function performs
+	#          a single search if multiple terms are supplied. If this is
+	#          supplied, the doi arg is ignored.
 	# * doi: A DOI to search for. If this is supplied, query is ignored.
 	# * page: Page number to return.
 	# * rows: Number of records to return
@@ -260,20 +261,20 @@ module Cites
 	# 	  Cites.search(['ecology', 'microbiology'])
 	# 	  out = Cites.search(['renear', 'science', 'smith birds'])
 	# 	  out.map {|i| i['doi']}
-	# 	  
+	#
 	# 	  Cites.search('science', :rows => 5)
-	# 	  
-	#     
+	#
+	#
 	#     # Feed into the doi2cit method
 	#     out = Cites.search('palmer')
 	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
 	#     Cites.show(g)
 	def self.search(query, options = {})
-		defaults = {:doi => nil, :page => nil, :rows => 10, 
-			:sort => nil, :year => nil, :header => true, 
+		defaults = {:doi => nil, :page => nil, :rows => 10,
+			:sort => nil, :year => nil, :header => true,
 			:fields => ["doi","normalizedScore","title","year"]}
-		# defaults = {"query" => 'ecology', "doi" => nil, "page" => nil, "rows" => 10, 
-		# 	"sort" => nil, "year" => nil, "header" => true, 
+		# defaults = {"query" => 'ecology', "doi" => nil, "page" => nil, "rows" => 10,
+		# 	"sort" => nil, "year" => nil, "header" => true,
 		# 	"fields" => ["doi","normalizedScore","title","year"]}
 		options = defaults.merge(options)
 		fields = options[:fields]
@@ -288,7 +289,7 @@ module Cites
 		end
 
 		url = "http://search.labs.crossref.org/dois"
-		
+
 		if options[:doi] == nil
 			# [fimxe] - looks like "rows" option isn't working like it's supposed to
 	        args = {"q" => query, "page" => options[:page], "rows" => options[:rows],
@@ -307,7 +308,7 @@ module Cites
 				gg = item.reject { |key,_| !fields.include? key }
 				coll << gg
 			end
-			
+
 			if options[:header] == true
 				out = out.to_hash
 	        	meta = out.except('items')
@@ -320,11 +321,11 @@ module Cites
 		end
 		return coll
 	end
-	
+
 	##
 	# setcache: Search for scholary objects in CrossRef
 	#
-	# Args: 
+	# Args:
 	# * query: A free form string of terms.
 	#
 	# Examples:
@@ -334,11 +335,11 @@ module Cites
 	# 	  Cites.search(['ecology', 'microbiology'])
 	# 	  out = Cites.search(['renear', 'science', 'smith birds'])
 	# 	  out.map {|i| i['doi']}
-	#     
+	#
 	#     # Feed into the doi2cit method
 	#     out = Cites.search('palmer')
 	#     g = Cites.doi2cit(out[1]['doi'], format='bibtex')
-	#     Cites.show(g)	
+	#     Cites.show(g)
 end
 
 class Hash
