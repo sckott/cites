@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.executables = ['cite']
 
   s.add_development_dependency "bundler", '~> 2.0'
-  s.add_development_dependency "rake", '~> 10.4'
+  s.add_development_dependency "rake", '~> 12.3'
   s.add_development_dependency "test-unit", '~> 3.1'
 
   s.add_runtime_dependency 'bibtex-ruby', '~> 4.0'
