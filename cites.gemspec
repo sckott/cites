@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'bibtex-ruby', '~> 4.0'
   s.add_runtime_dependency 'httparty', '~> 0.13'
   s.add_runtime_dependency 'thor', '~> 0.19'
-  s.add_runtime_dependency 'json', '~> 1.8'
+  s.add_runtime_dependency 'json', '>= 1.8', '< 3.0'
   s.add_runtime_dependency 'api_cache', '~> 0.2'
   s.add_runtime_dependency 'moneta', '~> 0.8'
   s.add_runtime_dependency 'launchy', '~> 2.4', '>= 2.4.2'
